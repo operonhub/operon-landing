@@ -5,6 +5,7 @@ const projects = [
   {
     live: true,
     url: "https://nutri-studio.vercel.app/",
+    image: "/projects/nutri-studio.png",
     cat: "SaaS · Salud",
     title: "Nutri Studio",
     desc: "Plataforma de visualización clínica para nutricionistas. Procesa los informes de composición corporal del InBody y los traduce a gráficos claros para que los pacientes entiendan sus resultados.",
@@ -14,10 +15,11 @@ const projects = [
   {
     live: true,
     url: "https://aberturasfar.netlify.app/",
+    image: "/projects/aberturas-far.png",
     cat: "Web corporativa",
     title: "Aberturas FAR",
     desc: "Sitio para una fábrica de aberturas de aluminio en Florencio Varela. Catálogo de 3 líneas de producto, presupuestador, formulario de contacto y SEO local. Rápido, editable y enfocado a generar leads reales.",
-    stack: ["HTML5 · CSS3", "JS vanilla", "Netlify", "SEO local"],
+    stack: ["HTML5 · CSS3", "JS vanilla", "SEO local"],
     metric: "Lighthouse 99/100",
   },
   {
@@ -79,7 +81,7 @@ export default function Projects() {
   );
 }
 
-function ProjectCard({ live, url, cat, title, desc, stack, metric, index }) {
+function ProjectCard({ live, url, image, cat, title, desc, stack, metric, index }) {
   const Wrapper = live ? "a" : "div";
   const wrapperProps = live
     ? { href: url, target: "_blank", rel: "noopener noreferrer" }
@@ -101,7 +103,7 @@ function ProjectCard({ live, url, cat, title, desc, stack, metric, index }) {
         {/* Live preview / mockup */}
         <div className="relative h-[280px] lg:h-[320px] bg-ink overflow-hidden">
           {live ? (
-            <LivePreview url={url} title={title} />
+            <LivePreview url={url} title={title} image={image} />
           ) : (
             <FauxMockup title={title} />
           )}
@@ -148,27 +150,25 @@ function ProjectCard({ live, url, cat, title, desc, stack, metric, index }) {
   );
 }
 
-function LivePreview({ url, title }) {
-  // Usamos thum.io — generación de screenshot en vivo, sin signup
-  const shotUrl = `https://image.thum.io/get/width/1200/crop/750/noanimate/${url}`;
+function LivePreview({ url, title, image }) {
   return (
     <>
       {/* Browser chrome */}
-      <div className="absolute left-6 top-6 right-6 rounded-xl border border-paper/15 bg-paper/[0.04] backdrop-blur-[1px] overflow-hidden">
-        <div className="flex items-center gap-1.5 px-3 py-2 border-b border-paper/10">
+      <div className="absolute left-6 top-6 right-6 bottom-16 rounded-xl border border-paper/15 bg-paper/[0.04] backdrop-blur-[1px] overflow-hidden flex flex-col">
+        <div className="flex items-center gap-1.5 px-3 py-2 border-b border-paper/10 shrink-0">
           <span className="w-2 h-2 rounded-full bg-paper/25" />
           <span className="w-2 h-2 rounded-full bg-paper/25" />
           <span className="w-2 h-2 rounded-full bg-paper/25" />
-          <span className="ml-3 font-mono-up text-paper/40 text-[10px] truncate">
+          <span className="ml-3 font-mono-up text-paper/50 text-[10px] truncate">
             {new URL(url).hostname}
           </span>
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={shotUrl}
+          src={image}
           alt={`Captura de ${title}`}
           loading="lazy"
-          className="block w-full h-[220px] lg:h-[240px] object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+          className="block w-full flex-1 object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
         />
       </div>
       {/* Glow */}
