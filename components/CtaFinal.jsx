@@ -58,13 +58,14 @@ export default function CtaFinal() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-10 flex flex-wrap items-center gap-3"
           >
-            <a
-              href="mailto:hola@operon.ar"
+            <button
+              type="button"
+              data-open-contact
               className="group inline-flex items-center gap-2 bg-sol text-ink font-display font-semibold text-[15px] px-5 py-4 rounded-xl hover:bg-[#FFD968]"
             >
               Agendar 30 min
               <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
+            </button>
             <a
               href="mailto:hola@operon.ar"
               className="inline-flex items-center gap-2 border border-paper/30 text-paper font-display font-semibold text-[15px] px-5 py-4 rounded-xl hover:bg-paper hover:text-ink hover:border-paper"

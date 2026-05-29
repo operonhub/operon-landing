@@ -65,13 +65,14 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-10 flex flex-wrap items-center gap-3"
             >
-              <a
-                href="#contacto"
+              <button
+                type="button"
+                data-open-contact
                 className="group inline-flex items-center gap-2 bg-ink text-paper font-display font-semibold text-[14.5px] px-5 py-3.5 rounded-xl hover:bg-blue"
               >
                 Agendar una llamada
                 <span className="transition-transform group-hover:translate-x-1">→</span>
-              </a>
+              </button>
               <a
                 href="#proyectos"
                 className="inline-flex items-center gap-2 border border-ink/90 text-ink font-display font-semibold text-[14.5px] px-5 py-3.5 rounded-xl hover:bg-ink hover:text-paper"

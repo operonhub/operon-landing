@@ -18,13 +18,14 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href="#contacto"
+          <button
+            type="button"
+            data-open-contact
             className="inline-flex items-center gap-1.5 bg-ink text-paper font-display font-semibold text-[13px] px-3.5 py-2 rounded-lg hover:bg-blue"
           >
             Hablemos
             <span aria-hidden>→</span>
-          </a>
+          </button>
         </div>
       </div>
     </header>

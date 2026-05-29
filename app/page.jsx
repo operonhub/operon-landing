@@ -6,6 +6,7 @@ import Process from "@/components/Process";
 import Differential from "@/components/Differential";
 import CtaFinal from "@/components/CtaFinal";
 import Footer from "@/components/Footer";
+import ContactModal from "@/components/ContactModal";
 
 export default function Page() {
   return (
@@ -18,6 +19,7 @@ export default function Page() {
       <Differential />
       <CtaFinal />
       <Footer />
+      <ContactModal />
     </main>
   );
 }
