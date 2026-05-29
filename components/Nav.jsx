@@ -20,12 +20,6 @@ export default function Nav() {
         <div className="flex items-center gap-2">
           <a
             href="#contacto"
-            className="hidden sm:inline-flex items-center gap-2 text-[13px] font-display font-semibold text-ink hover:text-blue px-3 py-2"
-          >
-            Iniciar sesión
-          </a>
-          <a
-            href="#contacto"
             className="inline-flex items-center gap-1.5 bg-ink text-paper font-display font-semibold text-[13px] px-3.5 py-2 rounded-lg hover:bg-blue"
           >
             Hablemos

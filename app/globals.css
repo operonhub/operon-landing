@@ -28,8 +28,8 @@ body {
 .font-display { font-family: 'Space Grotesk', 'Geist', sans-serif; letter-spacing:-.025em; }
 .font-mono-up { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; }
 
-.shell { max-width:1320px; margin:0 auto; padding:0 48px; }
-@media (max-width:760px){ .shell { padding:0 22px; } }
+.shell { max-width:1320px; margin:0 auto; padding-left:48px; padding-right:48px; }
+@media (max-width:760px){ .shell { padding-left:22px; padding-right:22px; } }
 
 /* Grain / noise overlay for premium tactile feel */
 .grain::before{
