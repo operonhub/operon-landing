@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Operon — Sistema de identidad</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+<link rel="stylesheet" href="brand.css" />
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════ -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="wrap" style="width:100%">
+    <div class="hero-top">
+      <div class="mono">Operon · Sistema de identidad</div>
+      <div class="mono">v1.0 · 2026</div>
+    </div>
+  </div>
+
+  <div class="wrap hero-center" style="width:100%">
+    <div id="hero-lockup-mount"></div>
+    <p class="hero-tagline">El globo escondido en la <em>“O”</em>. Flota, y nadie más necesita saber por qué.</p>
+  </div>
+
+  <div class="wrap" style="width:100%">
+    <div class="hero-bot">
+      <div class="col"><div class="k">Concepto</div><div class="v">La “O” de Operon es un globo que se suelta</div></div>
+      <div class="col"><div class="k">Lectura pública</div><div class="v">Símbolo tech que se eleva · sin fútbol</div></div>
+      <div class="col"><div class="k">Guiño privado</div><div class="v">El Globo · solo para los que saben</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     EL MARK SOBRE SUPERFICIES
+     ═══════════════════════════════════════ -->
+<section class="section" data-screen-label="02 El mark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 01</div>
+      <div>
+        <h2 class="h2">El mark.</h2>
+        <p class="lead">El globo es el símbolo aislado: cuerpo, nudo y piolín. Aguanta cualquier fondo y una sola tinta. Es la “O” cuando viaja sola.</p>
+      </div>
+    </div>
+    <div id="surfaces-mount"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     ANATOMÍA
+     ═══════════════════════════════════════ -->
+<section class="section" data-screen-label="03 Construcción">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 02</div>
+      <div>
+        <h2 class="h2">Construcción.</h2>
+        <p class="lead">Tres trazos sobre una grilla. Nada decorativo: cada elemento tiene una razón geométrica y se puede redibujar de memoria.</p>
+      </div>
+    </div>
+
+    <div class="anatomy">
+      <div class="anatomy-stage" id="anatomy-mount"></div>
+      <div class="anatomy-list">
+        <div class="anatomy-row"><div class="idx">01</div><div><h4>El cuerpo</h4><p>Un círculo perfecto, trazo abierto. Mismo grosor que el peso 600 de la tipografía para que conviva con la palabra.</p></div></div>
+        <div class="anatomy-row"><div class="idx">02</div><div><h4>El nudo</h4><p>Un triángulo corto bajo el cuerpo. Es lo que lo convierte en globo y no en una “o” o un cero. Pequeño, firme.</p></div></div>
+        <div class="anatomy-row"><div class="idx">03</div><div><h4>El piolín</h4><p>Una curva suelta que cae y vuelve. Da movimiento, sugiere que está atado pero a punto de soltarse. Nunca recto.</p></div></div>
+        <div class="anatomy-row"><div class="idx">04</div><div><h4>La proporción</h4><p>El cuerpo ocupa ~⅗ de la altura total; nudo y piolín el resto. Esa relación se mantiene en todos los tamaños.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     LOCKUPS
+     ═══════════════════════════════════════ -->
+<section class="section" data-screen-label="04 Lockups">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 03</div>
+      <div>
+        <h2 class="h2">Logotipo.</h2>
+        <p class="lead">El principal es el inline: el globo <em>es</em> la O de “Operon”. Los demás derivan de él para contextos donde la palabra no entra.</p>
+      </div>
+    </div>
+    <div id="lockups-mount"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CLEARSPACE + SIZES
+     ═══════════════════════════════════════ -->
+<section class="section" data-screen-label="05 Aire y tamaños">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 04</div>
+      <div>
+        <h2 class="h2">Aire y tamaños.</h2>
+        <p class="lead">El globo necesita lugar para flotar. Reservá alrededor el alto del cuerpo. Nunca lo uses tan chico que el nudo se pierda.</p>
+      </div>
+    </div>
+
+    <div class="cs-grid">
+      <div>
+        <div class="mono" style="margin-bottom:16px;color:var(--soft)">Área de protección · = altura del cuerpo (x)</div>
+        <div class="cs-stage" id="clearspace-mount"></div>
+      </div>
+      <div>
+        <div class="mono" style="margin-bottom:16px;color:var(--soft)">Tamaños mínimos</div>
+        <div class="sizes-stage">
+          <div class="sizes-row" id="sizes-mount"></div>
+          <div class="sizes-note">Mínimo del mark solo: <strong>16px</strong> (favicon). Mínimo del lockup completo: <strong>96px</strong> de ancho. Por debajo, usá solo el globo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     COLOR
+     ═══════════════════════════════════════ -->
+<section class="section" data-screen-label="06 Color">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 05</div>
+      <div>
+        <h2 class="h2">Color.</h2>
+        <p class="lead">Tinta sobre papel cálido es el default. El azul es la acción; el amarillo, la celebración — aparece poco, por eso pega. El globo casi siempre va en tinta o en negativo.</p>
+      </div>
+    </div>
+
+    <div class="palette">
+      <div class="chip"><div class="swatch" style="background:#FBF9F4;border-bottom:1px solid var(--line)"></div><div class="meta"><div class="nm">Papel</div><div class="hex">#FBF9F4</div><div class="role">Fondo base</div></div></div>
+      <div class="chip"><div class="swatch" style="background:#14130F"></div><div class="meta"><div class="nm">Tinta</div><div class="hex">#14130F</div><div class="role">Texto · mark</div></div></div>
+      <div class="chip"><div class="swatch" style="background:#1F40C2"></div><div class="meta"><div class="nm">Azul</div><div class="hex">#1F40C2</div><div class="role">Acción · links</div></div></div>
+      <div class="chip"><div class="swatch" style="background:#F2C94C"></div><div class="meta"><div class="nm">Sol</div><div class="hex">#F2C94C</div><div class="role">Acento · éxito</div></div></div>
+      <div class="chip"><div class="swatch" style="background:#E1DBCC"></div><div class="meta"><div class="nm">Arena</div><div class="hex">#E1DBCC</div><div class="role">Bordes · sutil</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TIPOGRAFÍA
+     ═══════════════════════════════════════ -->
+<section class="section" data-screen-label="07 Tipografía">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 06</div>
+      <div>
+        <h2 class="h2">Tipografía.</h2>
+        <p class="lead">Una grotesque para hablar fuerte, una sans para hablar claro, una mono para los datos. Tres voces, un solo tono.</p>
+      </div>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-card">
+        <div class="tt">Display · Space Grotesk 600</div>
+        <div class="specimen display" style="font-family:'Space Grotesk',sans-serif;font-weight:600">Aa</div>
+        <div class="scale">
+          <div class="ln"><span style="font-family:'Space Grotesk';font-weight:600;font-size:28px;letter-spacing:-.02em">Títulos y la marca</span><span class="lbl">600 · −2.5%</span></div>
+          <div class="ln"><span style="font-family:'Space Grotesk';font-weight:500;font-size:20px;letter-spacing:-.01em">Subtítulos y CTAs</span><span class="lbl">500</span></div>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="tt">Texto · Geist · Datos · JetBrains Mono</div>
+        <div class="specimen" style="font-family:'Geist',sans-serif;font-weight:400">Aa</div>
+        <div class="scale">
+          <div class="ln"><span style="font-family:'Geist';font-weight:400;font-size:17px">Cuerpo de texto legible, cálido y neutro.</span><span class="lbl">Geist 400</span></div>
+          <div class="ln"><span style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.04em">OPERON · 09:04 · 0 ERRORES</span><span class="lbl">Mono 500</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     APLICACIONES
+     ═══════════════════════════════════════ -->
+<section class="section" data-screen-label="08 Aplicaciones">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 07</div>
+      <div>
+        <h2 class="h2">En la realidad.</h2>
+        <p class="lead">Lo mismo, en todos lados: la pantalla, el bolsillo, la firma del mail. El globo viaja y siempre se reconoce.</p>
+      </div>
+    </div>
+
+    <div class="apps">
+      <div class="app">
+        <div class="app-stage" id="app-icon-mount"></div>
+        <div class="app-cap">App icon</div>
+      </div>
+      <div class="app">
+        <div class="app-stage" id="app-favicon-mount"></div>
+        <div class="app-cap">Favicon · pestaña</div>
+      </div>
+      <div class="app">
+        <div class="app-stage" id="app-avatar-mount"></div>
+        <div class="app-cap">Avatar social</div>
+      </div>
+      <div class="app span2">
+        <div class="app-stage" style="background:var(--paper)" id="app-card-mount"></div>
+        <div class="app-cap">Tarjeta personal</div>
+      </div>
+      <div class="app">
+        <div class="app-stage" id="app-sig-mount"></div>
+        <div class="app-cap">Firma de email</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     MOTION
+     ═══════════════════════════════════════ -->
+<section class="section" data-screen-label="09 Motion">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 08</div>
+      <div>
+        <h2 class="h2">La <em>“O”</em> se suelta.</h2>
+        <p class="lead">El gesto de marca: la O se desata y flota. Úsalo en cargas, transiciones y el momento de “listo”. Sutil — una vez, no en loop eterno.</p>
+      </div>
+    </div>
+
+    <div class="motion">
+      <div class="motion-stage" id="motion-mount">
+        <div class="ground"></div>
+      </div>
+      <div>
+        <p style="font-size:16px;line-height:1.6;color:var(--ink);margin:0 0 24px;max-width:36ch">Tocá el botón: la palabra queda, la O se suelta y sube. La marca <em>hace</em> lo que dice — te saca el peso de encima.</p>
+        <button class="release-btn" id="release-btn">Soltá la O <span aria-hidden="true">↑</span></button>
+        <p class="mono" style="margin-top:24px;color:var(--soft);line-height:1.6">Duración ≈ 2.8s · easing suave<br />Respeta prefers-reduced-motion</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     USOS
+     ═══════════════════════════════════════ -->
+<section class="section" data-screen-label="10 Usos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 09</div>
+      <div>
+        <h2 class="h2">Lo que <em>no</em> hacemos.</h2>
+        <p class="lead">El globo es simple a propósito. Tres formas de arruinarlo, una de respetarlo.</p>
+      </div>
+    </div>
+    <div id="rules-mount"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════ -->
+<footer class="foot" data-screen-label="11 Cierre">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div id="foot-lockup-mount" style="margin-bottom:18px"></div>
+        <p>Automatizaciones que entendés y mantenés vos. Construidas en Argentina, para pymes argentinas.</p>
+      </div>
+      <div>
+        <h4>Este sistema</h4>
+        <p>El mark, los lockups y el color, listos para producción. Decime y exporto SVG/PNG + favicon.</p>
+      </div>
+      <div>
+        <h4>Próximo</h4>
+        <p>Aplicar el globo-O al header de la landing.</p>
+        <p class="mono" style="margin-top:18px">Operon · identidad · v1.0</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="brand-app.jsx"></script>
+
+</body>
+</html>

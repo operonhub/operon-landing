@@ -1,0 +1,1148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Marca — Exploración de identidad</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+<link rel="stylesheet" href="styles.css" />
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body data-theme="light" data-focus="all">
+
+<!-- ────────────────────────────────────────
+     FIXED RAIL — table of contents
+     ──────────────────────────────────────── -->
+<nav class="rail" aria-label="Índice">
+  <a href="#cover" data-id="cover"><i></i>Portada</a>
+  <a href="#brief" data-id="brief"><i></i>Brief</a>
+  <a href="#overview" data-id="overview"><i></i>Las 4 direcciones</a>
+  <a href="#dir-01" data-id="dir-01"><i></i>01 · Norden</a>
+  <a href="#dir-02" data-id="dir-02"><i></i>02 · Taller</a>
+  <a href="#dir-03" data-id="dir-03"><i></i>03 · Runtime</a>
+  <a href="#dir-04" data-id="dir-04"><i></i>04 · Posta</a>
+  <a href="#compare" data-id="compare"><i></i>Comparativa</a>
+  <a href="#closing" data-id="closing"><i></i>Recomendación</a>
+</nav>
+
+<!-- ────────────────────────────────────────
+     COVER
+     ──────────────────────────────────────── -->
+<section id="cover" class="cover" data-screen-label="01 Portada">
+  <div class="cover-top">
+    <div class="cover-mark">Documento interno · Exploración estratégica</div>
+    <div class="cover-mark">Marca por nombrar · v0.1 · 2026</div>
+  </div>
+
+  <div class="cover-mid">
+    <div class="eyebrow">Branding · Naming · Identidad visual · Posicionamiento</div>
+    <h1 class="cover-title">
+      Cuatro<br />
+      caminos para<br />
+      una <em>misma</em><br />
+      empresa.
+    </h1>
+    <p class="body-l muted" style="max-width:62ch">
+      Una exploración honesta de quién podríamos ser, antes de elegir cómo nos llamamos. Cuatro direcciones de marca completas, con nombre, identidad visual, sistema gráfico, posicionamiento y prototipos conceptuales. No para elegir la perfecta — para descubrir cuál se parece más a nosotros.
+    </p>
+  </div>
+
+  <dl class="cover-bot">
+    <div class="cover-meta">
+      <dt>Para</dt>
+      <dd>Dos fundadores, Lanús · 27 años · Contaduría + Diseño web</dd>
+    </div>
+    <div class="cover-meta">
+      <dt>Mercado</dt>
+      <dd>Pymes y emprendedores · LATAM</dd>
+    </div>
+    <div class="cover-meta">
+      <dt>Producto</dt>
+      <dd>Automatización con IA · SaaS · Workflows · Herramientas internas</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ────────────────────────────────────────
+     BRIEF
+     ──────────────────────────────────────── -->
+<section id="brief" class="section" data-screen-label="02 Brief">
+  <div class="doc">
+    <div class="brief-grid">
+      <aside class="brief-side">§ 01 · Punto de partida</aside>
+
+      <div class="brief-col">
+        <h3>El problema real.</h3>
+        <p>Hay miles de "agencias de IA" prometiendo lo mismo. Tres slides, una landing morada, el mismo discurso. La pyme no necesita otra promesa — necesita que algo simplemente <em>funcione</em>: la facturación que se concilia sola, el cliente que recibe el remito sin que nadie lo arme, el reporte que aparece el lunes a las 9.</p>
+        <p>Nuestra empresa hace eso. Automatización seria, sin solemnidad. La pregunta de marca no es <em>qué decimos</em>. Es <em>desde dónde lo decimos</em>.</p>
+      </div>
+
+      <div class="brief-col">
+        <h3>El feeling que buscamos.</h3>
+        <p><strong>Infraestructura silenciosa que simplemente funciona.</strong> Esa es la línea madre. Como el agua corriente, como un buen contador, como Stripe atrás de una compra. No queremos ser protagonistas — queremos que el cliente sea más capaz por habernos contratado.</p>
+        <p>De ahí salen cuatro lecturas distintas: una institucional, una artesanal, una técnica, una cercana. Las cuatro tienen credibilidad. Cada una atrae a una pyme distinta.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:96px" class="brief-grid">
+      <aside class="brief-side">§ 02 · Decisiones por delante</aside>
+
+      <div class="brief-col">
+        <h3>Qué vamos a definir.</h3>
+        <p class="muted" style="margin-bottom:24px">Cada dirección llega completa pero modular — podés tomar el tono de una y la paleta de otra. El objetivo es ver el espacio de soluciones, no comprometerse en la página 1.</p>
+        <ol class="mono" style="padding-left:18px;line-height:2.4;color:var(--ink)">
+          <li>Tono y personalidad de marca</li>
+          <li>Nombre (12–15 candidatos por dirección)</li>
+          <li>Paleta y tipografía</li>
+          <li>Sistema gráfico e iconografía</li>
+          <li>Posicionamiento y slogans</li>
+          <li>Prototipos conceptuales (hero, dashboard, componentes)</li>
+        </ol>
+      </div>
+
+      <div class="brief-col">
+        <h3>Cómo leer este documento.</h3>
+        <p>Cada dirección ocupa una sección larga. Empieza con el nombre y la promesa, sigue con la identidad visual aplicada, después la lista de nombres alternativos y termina con prototipos. Si querés enfocarte en una, podés esconder las otras desde el panel <span class="tag">Tweaks</span> en la esquina inferior derecha.</p>
+        <p>Las cuatro están escritas como si ya hubiéramos elegido. Eso es a propósito: queremos ver cómo se siente cada decisión <em>desde adentro</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────
+     OVERVIEW — 4 direction cards
+     ──────────────────────────────────────── -->
+<section id="overview" class="section" data-screen-label="03 Overview">
+  <div class="doc">
+    <header class="between" style="margin-bottom:64px;align-items:end">
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px">§ 03 · Vista general</div>
+        <h2 class="h-l" style="margin:0;max-width:18ch">Cuatro lecturas posibles de la misma promesa.</h2>
+      </div>
+      <div class="mono" style="text-align:right;color:var(--mute);max-width:36ch;line-height:1.6">
+        Tono, color, tipografía y posicionamiento divergen.<br />
+        La misión — automatización seria para pymes — es la misma.
+      </div>
+    </header>
+
+    <div class="overview">
+      <a href="#dir-01" class="ov-card">
+        <div class="ov-num">01 · Premium institucional</div>
+        <div class="ov-name">Norden</div>
+        <div class="ov-tag">Infraestructura para empresas que van en serio. Monocromo, sans neutra, distancia profesional.</div>
+        <div class="ov-swatches" aria-hidden="true">
+          <i style="background:#FAFAF7"></i><i style="background:#DDD9CF"></i><i style="background:#6B6963"></i><i style="background:#1F2937"></i><i style="background:#0E0E0C"></i>
+        </div>
+        <div class="ov-meta"><span>Stripe · Ramp · Mercury</span><span>Pyme madura</span></div>
+      </a>
+
+      <a href="#dir-02" class="ov-card">
+        <div class="ov-num">02 · Artesano editorial</div>
+        <div class="ov-name" style="font-family:var(--serif);font-style:italic">Taller</div>
+        <div class="ov-tag">Software hecho como mueble: con cuidado y al milímetro. Cálido, serif display, primera persona.</div>
+        <div class="ov-swatches" aria-hidden="true">
+          <i style="background:#F0EBE0"></i><i style="background:#C9BFAE"></i><i style="background:#C2552B"></i><i style="background:#6F6357"></i><i style="background:#1A1816"></i>
+        </div>
+        <div class="ov-meta"><span>Linear · Arc · Anthropic</span><span>Founders & estudios</span></div>
+      </a>
+
+      <a href="#dir-03" class="ov-card">
+        <div class="ov-num">03 · Sistema operativo</div>
+        <div class="ov-name" style="font-family:var(--mono);font-size:36px;letter-spacing:-.02em">Runtime</div>
+        <div class="ov-tag">El SO invisible que orquesta el negocio. Dark, mono técnica, builder-first, self-serve.</div>
+        <div class="ov-swatches" aria-hidden="true">
+          <i style="background:#0A0A0B"></i><i style="background:#22221F"></i><i style="background:#6E6C68"></i><i style="background:#B6F36A"></i><i style="background:#E7E5E0"></i>
+        </div>
+        <div class="ov-meta"><span>Retool · Railway · Supabase</span><span>Devs & CTOs</span></div>
+      </a>
+
+      <a href="#dir-04" class="ov-card">
+        <div class="ov-num">04 · Cercano LATAM</div>
+        <div class="ov-name" style="font-family:var(--sans);font-weight:600;font-size:42px;letter-spacing:-.025em">Posta</div>
+        <div class="ov-tag">La herramienta que tu pyme entiende desde el lunes. Saturado pero serio, grotesque, voseo amable.</div>
+        <div class="ov-swatches" aria-hidden="true">
+          <i style="background:#FBF9F4"></i><i style="background:#E1DBCC"></i><i style="background:#F2C94C"></i><i style="background:#1A4DE0"></i><i style="background:#1B1A18"></i>
+        </div>
+        <div class="ov-meta"><span>Notion · Stripe · Cabify</span><span>Pymes & emprendedores</span></div>
+      </a>
+    </div>
+
+    <p class="muted" style="margin-top:32px;font-size:13px;font-family:var(--mono);letter-spacing:.04em">
+      Las referencias citadas inspiran tono y nivel de craft — no se copia estilo, paleta ni layout.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     DIRECCIÓN 01 — NORDEN
+     ════════════════════════════════════════ -->
+<section id="dir-01" class="dir" data-screen-label="04 Dirección 01 Norden">
+  <span class="dir-num">Dirección 01 / 04</span>
+
+  <div class="doc">
+    <div class="dir-head">
+      <div class="label">§ 04<br />Premium<br />institucional</div>
+      <h2 class="dir-name">Norden.</h2>
+      <p class="dir-tagline">Para la pyme que ya no quiere parecer pyme.</p>
+    </div>
+
+    <!-- Identity panel: palette + type -->
+    <div class="identity">
+      <div class="id-block">
+        <h4>Paleta — Monocromo grafito</h4>
+        <div class="palette">
+          <div class="swatch on-light" style="background:#FAFAF7"><span class="name">Paper</span><span class="hex">#FAFAF7</span></div>
+          <div class="swatch on-light" style="background:#DDD9CF"><span class="name">Stone</span><span class="hex">#DDD9CF</span></div>
+          <div class="swatch" style="background:#6B6963"><span class="name">Slate</span><span class="hex">#6B6963</span></div>
+          <div class="swatch" style="background:#1F2937"><span class="name">Graphite</span><span class="hex">#1F2937</span></div>
+          <div class="swatch" style="background:#0E0E0C"><span class="name">Ink</span><span class="hex">#0E0E0C</span></div>
+        </div>
+        <p class="muted" style="font-size:13px;line-height:1.55;margin-top:16px;max-width:42ch">Cinco valores, cero color. Las pymes serias compran a empresas que se ven serias — y la seriedad, visualmente, suele ser ausencia. Acento único en grafito; nada de gradientes, nada de iridiscencias.</p>
+      </div>
+
+      <div class="id-block">
+        <h4>Tipografía — Sans neutra estructural</h4>
+        <div class="typeset">
+          <div class="type-row">
+            <div class="type-label"><span>Display · Geist 500</span><span>40 / 64 / 96</span></div>
+            <div class="type-sample" style="font-family:'Geist',sans-serif;font-weight:500;font-size:48px;letter-spacing:-.025em">Infraestructura silenciosa.</div>
+          </div>
+          <div class="type-row">
+            <div class="type-label"><span>Body · Geist 400</span><span>15 / 17 / 21</span></div>
+            <div class="type-sample" style="font-family:'Geist',sans-serif;font-weight:400;font-size:17px;letter-spacing:0;line-height:1.5;color:var(--ink)">Sistemas de automatización para empresas que necesitan resultados, no entusiasmo. Cero relato — todo evidencia.</div>
+          </div>
+          <div class="type-row">
+            <div class="type-label"><span>Mono · Geist Mono 500</span><span>10 / 11 / 13</span></div>
+            <div class="type-sample" style="font-family:'Geist Mono',monospace;font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)">Norden · Sistemas Operativos · 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personality & tone -->
+    <div>
+      <h3 class="h-m" style="margin:0 0 32px">Personalidad y tono.</h3>
+
+      <div class="aspect">
+        <div class="aspect-label">Personalidad</div>
+        <div class="aspect-body">
+          <p>Sobrio, preciso, infraestructural. Norden es la empresa que tu directorio quiere contratar antes de mencionarla en la reunión. Habla en tercera persona, mide en porcentajes, no celebra las cosas — las entrega.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Tono</div>
+        <div class="aspect-body">
+          <p><strong>"La operación de su empresa, automatizada en seis semanas. Reportes diarios. Auditoría completa. SLA del 99.7%."</strong></p>
+          <p class="muted">Frases cortas. Datos concretos. Nada de "transformamos negocios". Nada de "la IA cambia todo". Lenguaje de banco serio.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Cliente ideal</div>
+        <div class="aspect-body">
+          <p>Pymes maduras de 30 a 300 empleados: distribuidoras, constructoras, estudios jurídicos, frigoríficos, importadoras, clínicas. Comprador: dueño + CFO. Decisión racional, ticket alto, contrato anual.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Percepción</div>
+        <div class="aspect-body">
+          <p>"Esto es serio. Esto es para empresas que van en serio. Si nos contratan a nosotros, también podríamos contratarlos a ellos."</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Ventajas / Riesgos</div>
+        <div class="aspect-body">
+          <div class="pros-cons">
+            <div>
+              <h5>A favor</h5>
+              <ul>
+                <li>Credibilidad inmediata frente a comprador no-técnico</li>
+                <li>Ticket alto, contratos largos, churn bajo</li>
+                <li>Escala a enterprise sin cambiar marca</li>
+                <li>Compite por reputación, no por precio</li>
+              </ul>
+            </div>
+            <div>
+              <h5 style="visibility:hidden">.</h5>
+              <ul class="cons">
+                <li>Tono frío puede alienar al cliente más cálido</li>
+                <li>Requiere fotografía y producción premium</li>
+                <li>Brecha grande entre marca y dos fundadores de 27</li>
+                <li>Costo alto de mantener consistencia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Inspiración</div>
+        <div class="aspect-body">
+          <div class="refs-row">
+            <span class="ref">Stripe / claridad estructural</span>
+            <span class="ref">Ramp / restraint cromático</span>
+            <span class="ref">Mercury / fintech serenidad</span>
+            <span class="ref">Vercel light / tipografía</span>
+            <span class="ref">Palantir / aura institucional</span>
+            <span class="ref">Linear v1 / sistema sin ornamento</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo zone — Norden hero + dashboard -->
+    <div class="demo">
+      <span class="demo-cap">Prototipo conceptual · Norden</span>
+      <div class="demo-row">
+        <div class="demo-cell">
+          <div class="d-eye" style="margin-bottom:32px">Norden — Operaciones Críticas</div>
+          <div class="d-head">Infraestructura<br />silenciosa.</div>
+          <p class="d-sub" style="margin-top:24px">La capa de automatización que tu empresa necesita y nunca debería notar. Despliegue en seis semanas con SLA garantizado.</p>
+          <div style="margin-top:36px;display:flex;gap:12px;align-items:center">
+            <div style="background:#0E0E0C;color:#FAFAF7;font-family:'Geist',sans-serif;font-size:13px;font-weight:500;padding:10px 18px;border-radius:4px">Solicitar diagnóstico</div>
+            <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;color:#6B6963;text-transform:uppercase">o ver caso · Editorial Reyes →</div>
+          </div>
+        </div>
+
+        <div class="demo-cell" style="background:#F2F0E9;display:flex;align-items:center;justify-content:center">
+          <!-- Mini dashboard mock -->
+          <div class="win" style="width:100%;max-width:380px">
+            <div class="win-head">
+              <i></i><i></i><i></i>
+              <span style="margin-left:8px">Norden · Panel</span>
+            </div>
+            <div class="win-body" style="padding:0">
+              <div style="padding:18px 20px;border-bottom:.5px solid rgba(14,14,12,.1)">
+                <div style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#6B6963;margin-bottom:8px">Operaciones · Hoy</div>
+                <div style="font-family:'Geist',sans-serif;font-size:44px;font-weight:500;letter-spacing:-.02em;color:#0E0E0C;line-height:1;font-variant-numeric:tabular-nums">1,284</div>
+                <div style="font-family:'Geist Mono',monospace;font-size:11px;color:#6B6963;margin-top:6px;letter-spacing:.04em">tareas ejecutadas · 99.6% éxito</div>
+              </div>
+              <div class="kpi-row" style="border-top:0">
+                <div class="kpi"><div class="lbl">Conciliación</div><div class="val">$4.2M</div></div>
+                <div class="kpi"><div class="lbl">Tiempo medio</div><div class="val">0.8s</div></div>
+                <div class="kpi"><div class="lbl">SLA</div><div class="val">99.7</div></div>
+              </div>
+              <div style="padding:18px 20px;border-top:.5px solid rgba(14,14,12,.1)">
+                <div style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#6B6963;margin-bottom:12px">Cola de procesos</div>
+                <div class="flow-list">
+                  <div class="row"><span class="dot"></span><span>Cierre diario · Sucursal 03</span><span class="ts">09:00:14</span><span class="st">OK</span></div>
+                  <div class="row"><span class="dot"></span><span>Conciliación bancos</span><span class="ts">09:01:02</span><span class="st">OK</span></div>
+                  <div class="row"><span class="dot"></span><span>Envío remitos · 41</span><span class="ts">09:03:48</span><span class="st">OK</span></div>
+                  <div class="row"><span class="dot pending"></span><span>Reporte semanal · Directorio</span><span class="ts">09:04:--</span><span class="st pending">Pend</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Naming -->
+    <div class="naming">
+      <div class="naming-head">
+        <h3>Nombres · Dirección 01</h3>
+        <div class="mono" style="max-width:36ch;color:var(--mute);line-height:1.55">Cortos · raíces latinas o nórdicas · sin sufijos AI · pronunciables en español e inglés sin fricción.</div>
+      </div>
+      <div class="naming-grid">
+        <div class="name-cell"><div class="nm">Norden</div><div class="pron">/nór·den/</div><div class="gloss">Norte en alemán/nórdico. Solidez del norte europeo, asociado a precisión.</div></div>
+        <div class="name-cell"><div class="nm">Albor</div><div class="pron">/al·bór/</div><div class="gloss">El alba; "los albores de". Primer momento, principio claro, latín.</div></div>
+        <div class="name-cell"><div class="nm">Vesta</div><div class="pron">/vés·ta/</div><div class="gloss">Diosa romana del hogar y la continuidad. Raíz que evoca permanencia.</div></div>
+        <div class="name-cell"><div class="nm">Pleno</div><div class="pron">/plé·no/</div><div class="gloss">Completo, en su capacidad total. Funciona como adjetivo y como marca.</div></div>
+        <div class="name-cell"><div class="nm">Coda</div><div class="pron">/kó·da/</div><div class="gloss">Final estructural en música, cierre. Implica método y resolución.</div></div>
+        <div class="name-cell"><div class="nm">Solium</div><div class="pron">/só·li·um/</div><div class="gloss">Trono en latín. Sin connotación monárquica obvia en español moderno.</div></div>
+        <div class="name-cell"><div class="nm">Pauta</div><div class="pron">/páu·ta/</div><div class="gloss">Orden, sistema, norma. Palabra cotidiana en español de negocios.</div></div>
+        <div class="name-cell"><div class="nm">Estela</div><div class="pron">/es·té·la/</div><div class="gloss">Rastro que algo deja al moverse. Implica continuidad y huella medible.</div></div>
+        <div class="name-cell"><div class="nm">Cardinal</div><div class="pron">/kar·di·nál/</div><div class="gloss">Punto de referencia, fundamental. Cardinal Systems lee inmediatamente serio.</div></div>
+        <div class="name-cell"><div class="nm">Veridia</div><div class="pron">/ve·rí·dia/</div><div class="gloss">Raíz de "verdad" + cadencia latina. Inventado pero legible.</div></div>
+        <div class="name-cell"><div class="nm">Adero</div><div class="pron">/a·dé·ro/</div><div class="gloss">Del verbo aderir, latín. Cuatro letras, dos sílabas, .com viable.</div></div>
+        <div class="name-cell"><div class="nm">Plomada</div><div class="pron">/plo·má·da/</div><div class="gloss">Herramienta del albañil para nivelar. Trabajo bien hecho, raíz oficio.</div></div>
+        <div class="name-cell"><div class="nm">Faro</div><div class="pron">/fá·ro/</div><div class="gloss">Punto de orientación. Universal, simple, alto reconocimiento.</div></div>
+        <div class="name-cell"><div class="nm">Lumio</div><div class="pron">/lú·mio/</div><div class="gloss">Luz, inventado. Suave, técnico, fácil de pronunciar globalmente.</div></div>
+      </div>
+    </div>
+
+    <!-- Positioning -->
+    <div class="positioning">
+      <div class="label">Posicionamiento</div>
+      <div>
+        <div class="slogans">
+          <div class="slogan">Operaciones críticas, automatizadas.</div>
+          <div class="slogan"><em>Lo que su empresa hace cada día,</em> sin que nadie lo haga.</div>
+          <div class="slogan">Infraestructura para empresas que <em>ya no son una startup.</em></div>
+          <div class="slogan">El sistema operativo de su negocio.</div>
+        </div>
+        <p class="statement"><strong>Visión.</strong> En diez años, la mayor parte del trabajo administrativo de una pyme media ocurrirá sin que nadie lo ejecute manualmente. Norden construye esa capa, con SLA, auditoría y soporte 24/7. No vendemos "IA". Vendemos resultados operacionales que antes requerían tres personas.</p>
+        <p class="statement"><strong>Diferenciación.</strong> No somos consultora — no cobramos por hora. No somos producto — no esperamos que aprenda nuestra interfaz. Somos el equipo de operaciones que su empresa nunca tuvo que contratar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     DIRECCIÓN 02 — TALLER
+     ════════════════════════════════════════ -->
+<section id="dir-02" class="dir" data-screen-label="05 Dirección 02 Taller">
+  <span class="dir-num">Dirección 02 / 04</span>
+
+  <div class="doc">
+    <div class="dir-head">
+      <div class="label">§ 05<br />Artesano<br />editorial</div>
+      <h2 class="dir-name" style="font-style:italic">Taller.</h2>
+      <p class="dir-tagline" style="font-style:normal;font-family:var(--serif)">Software hecho como mueble. Al milímetro, a la vista.</p>
+    </div>
+
+    <div class="identity">
+      <div class="id-block">
+        <h4>Paleta — Lino crudo + terracota</h4>
+        <div class="palette">
+          <div class="swatch on-light" style="background:#F0EBE0"><span class="name">Linen</span><span class="hex">#F0EBE0</span></div>
+          <div class="swatch on-light" style="background:#C9BFAE"><span class="name">Ash</span><span class="hex">#C9BFAE</span></div>
+          <div class="swatch" style="background:#C2552B"><span class="name">Terra</span><span class="hex">#C2552B</span></div>
+          <div class="swatch" style="background:#6F6357"><span class="name">Taupe</span><span class="hex">#6F6357</span></div>
+          <div class="swatch" style="background:#1A1816"><span class="name">Sumi</span><span class="hex">#1A1816</span></div>
+        </div>
+        <p class="muted" style="font-size:13px;line-height:1.55;margin-top:16px;max-width:42ch">Calidez deliberada. La terracota — un solo acento — funciona como sello del taller: marca lo importante, nunca decora. Todo lo demás respira en tonos crema y taupe.</p>
+      </div>
+
+      <div class="id-block">
+        <h4>Tipografía — Serif display + sans considerada</h4>
+        <div class="typeset">
+          <div class="type-row">
+            <div class="type-label"><span>Display · Instrument Serif</span><span>52 / 84 / 144</span></div>
+            <div class="type-sample" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:54px;letter-spacing:-.02em;line-height:1">Las cosas <em style="font-style:italic;color:#C2552B">bien hechas</em>.</div>
+          </div>
+          <div class="type-row">
+            <div class="type-label"><span>Body · Geist 400</span><span>16 / 18 / 22</span></div>
+            <div class="type-sample" style="font-family:'Geist',sans-serif;font-weight:400;font-size:18px;letter-spacing:0;line-height:1.55">Construimos cada automatización como si la fuéramos a usar nosotros mismos. Porque casi siempre, lo hacemos.</div>
+          </div>
+          <div class="type-row">
+            <div class="type-label"><span>Mono · JetBrains Mono 500</span><span>10 / 11 / 13</span></div>
+            <div class="type-sample" style="font-family:'JetBrains Mono',monospace;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#C2552B">Taller — Software & Automatización — MMXXVI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="h-m" style="margin:0 0 32px">Personalidad y tono.</h3>
+
+      <div class="aspect">
+        <div class="aspect-label">Personalidad</div>
+        <div class="aspect-body">
+          <p>Humano, considerado, deliberadamente lento donde otros aceleran. Taller no promete escalar a un millón de usuarios — promete que tu cuenta esté pensada por alguien que te conoce el nombre.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Tono</div>
+        <div class="aspect-body">
+          <p><em>"Trabajamos con quince empresas a la vez. Cada una conoce a su persona en el taller. No tenemos chat 24/7 — tenemos un número de teléfono."</em></p>
+          <p class="muted">Primera persona del plural. Frases con ritmo. Ningún emoji, ningún signo de exclamación. Citas en cursiva. Honestidad como recurso retórico.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Cliente ideal</div>
+        <div class="aspect-body">
+          <p>Estudios profesionales que ya valoran diseño y oficio: arquitectura, contaduría con marca, abogacía boutique, agencias creativas, productoras, despachos. Founders. Comprador: dueño, decisión emocional + racional. Ticket medio, contrato proyecto-a-proyecto que muta a permanente.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Percepción</div>
+        <div class="aspect-body">
+          <p>"Estos tipos hacen software como si fuera un mueble. Cada cosa está pensada. No los voy a cambiar nunca."</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Ventajas / Riesgos</div>
+        <div class="aspect-body">
+          <div class="pros-cons">
+            <div>
+              <h5>A favor</h5>
+              <ul>
+                <li>Diferenciación brutal en un mar de promesas idénticas</li>
+                <li>Fidelidad altísima, referrals orgánicos</li>
+                <li>Honest sobre la escala: dos fundadores, ése es el activo</li>
+                <li>Premio fácil en concursos de diseño + prensa de nicho</li>
+              </ul>
+            </div>
+            <div>
+              <h5 style="visibility:hidden">.</h5>
+              <ul class="cons">
+                <li>Techo claro: "boutique" no escala bien a 100 empleados</li>
+                <li>Comprador enterprise puede leerlo como "demasiado chico"</li>
+                <li>Requiere disciplina editorial sostenida (copywriting)</li>
+                <li>Si crecés rápido, la marca empieza a mentir</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Inspiración</div>
+        <div class="aspect-body">
+          <div class="refs-row">
+            <span class="ref">Linear / craft tipográfico</span>
+            <span class="ref">Arc / personalidad cálida</span>
+            <span class="ref">Anthropic / tono editorial</span>
+            <span class="ref">Vercel / arte digital con alma</span>
+            <span class="ref">Are.na / cultura del archivo</span>
+            <span class="ref">37signals / honestidad de escala</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo zone — Taller -->
+    <div class="demo">
+      <span class="demo-cap">Prototipo conceptual · Taller</span>
+      <div class="demo-row">
+        <div class="demo-cell" style="background:#F0EBE0;padding:64px 56px">
+          <div class="d-eye" style="margin-bottom:48px">Taller — № 04</div>
+          <div class="d-head">Las cosas<br /><em>bien hechas</em><br />tardan.</div>
+          <p class="d-sub" style="margin-top:32px">Construimos automatizaciones para quince clientes a la vez. Cada uno conoce a su persona en el taller. Empezamos con un café, no con un formulario.</p>
+          <div style="margin-top:40px;display:flex;gap:20px;align-items:center">
+            <div style="background:#1A1816;color:#F0EBE0;font-family:'Geist',sans-serif;font-size:14px;font-weight:500;padding:12px 22px;border-radius:2px;letter-spacing:.01em">Conversemos</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:#C2552B;text-transform:uppercase">→ Cuaderno de trabajo</div>
+          </div>
+        </div>
+
+        <div class="demo-cell" style="background:#E5DECC;display:flex;align-items:center;justify-content:center;padding:48px">
+          <!-- Editorial card stack -->
+          <div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:18px">
+            <div style="border:.5px solid rgba(26,24,22,.18);background:#F0EBE0;padding:20px 22px;position:relative">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#C2552B">Pieza № 12 · publicada hoy</div>
+              <div style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05;letter-spacing:-.01em;margin-top:10px;color:#1A1816">Por qué cobramos por proyecto, no por hora.</div>
+              <div style="font-family:'Geist',sans-serif;font-size:12px;color:#6F6357;margin-top:12px;line-height:1.55">Una nota corta sobre el problema de incentivos cuando el oficio se paga por tiempo.</div>
+            </div>
+            <div style="border:.5px solid rgba(26,24,22,.18);background:#F0EBE0;padding:18px 22px">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#6F6357">Caso № 07 · Editorial Reyes</div>
+              <div style="font-family:'Instrument Serif',serif;font-size:22px;line-height:1.1;margin-top:8px;color:#1A1816">Catorce procesos que ya nadie ejecuta a mano.</div>
+            </div>
+            <div style="border:.5px solid rgba(26,24,22,.18);background:#F0EBE0;padding:18px 22px;display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#6F6357">Estado del taller</div>
+                <div style="font-family:'Instrument Serif',serif;font-size:18px;color:#1A1816;margin-top:2px">2 lugares · invierno</div>
+              </div>
+              <div style="width:32px;height:32px;border-radius:50%;background:#C2552B"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Naming -->
+    <div class="naming">
+      <div class="naming-head">
+        <h3 style="font-style:italic">Nombres · Dirección 02</h3>
+        <div class="mono" style="max-width:36ch;color:var(--mute);line-height:1.55">Una palabra · raíz castellana o latina · sustantivo concreto · evoca oficio, taller, papel, herramienta.</div>
+      </div>
+      <div class="naming-grid">
+        <div class="name-cell"><div class="nm">Taller</div><div class="pron">/ta·llér/</div><div class="gloss">Lugar donde se trabaja con las manos. Honesto, anti-AI, anti-cloud.</div></div>
+        <div class="name-cell"><div class="nm">Mesón</div><div class="pron">/me·són/</div><div class="gloss">Mesa de trabajo + lugar de hospedaje. Evoca artesanía y conversación.</div></div>
+        <div class="name-cell"><div class="nm">Pluma</div><div class="pron">/plú·ma/</div><div class="gloss">Instrumento de escritura. Implica autoría, escritura, oficio.</div></div>
+        <div class="name-cell"><div class="nm">Hilado</div><div class="pron">/i·lá·do/</div><div class="gloss">Proceso de hilar. Conexión, continuidad, hecho a mano.</div></div>
+        <div class="name-cell"><div class="nm">Sello</div><div class="pron">/sé·llo/</div><div class="gloss">Marca de autoría, garantía, sigillum. Editorial y tipográfico.</div></div>
+        <div class="name-cell"><div class="nm">Margen</div><div class="pron">/már·gen/</div><div class="gloss">Espacio en el papel + ganancia. Doble lectura que respira.</div></div>
+        <div class="name-cell"><div class="nm">Lindero</div><div class="pron">/lin·dé·ro/</div><div class="gloss">Límite entre dos terrenos. Implica precisión y orden.</div></div>
+        <div class="name-cell"><div class="nm">Páramo</div><div class="pron">/pá·ra·mo/</div><div class="gloss">Llanura alta, austera. Belleza del minimalismo.</div></div>
+        <div class="name-cell"><div class="nm">Cántara</div><div class="pron">/kán·ta·ra/</div><div class="gloss">Vasija antigua de medida. Oficio + estándar.</div></div>
+        <div class="name-cell"><div class="nm">Bisel</div><div class="pron">/bi·sél/</div><div class="gloss">Borde corto entre dos planos. Precisión del detalle.</div></div>
+        <div class="name-cell"><div class="nm">Sintaxis</div><div class="pron">/sin·tá·xis/</div><div class="gloss">Estructura de un sistema. Tecnicismo elegante, universal.</div></div>
+        <div class="name-cell"><div class="nm">Caligo</div><div class="pron">/ká·li·go/</div><div class="gloss">Niebla en latín. Misterio, cuidado, raíz culta.</div></div>
+        <div class="name-cell"><div class="nm">Pliego</div><div class="pron">/pli·é·go/</div><div class="gloss">Hoja doblada, unidad editorial. Trabajo medido en pliegos.</div></div>
+        <div class="name-cell"><div class="nm">Yunque</div><div class="pron">/yún·ke/</div><div class="gloss">Herramienta del herrero. Forja, persistencia, raíz oficio.</div></div>
+      </div>
+    </div>
+
+    <!-- Positioning -->
+    <div class="positioning">
+      <div class="label">Posicionamiento</div>
+      <div>
+        <div class="slogans">
+          <div class="slogan">Software hecho <em>a mano</em>, y a propósito.</div>
+          <div class="slogan">Tomamos quince clientes a la vez. <em>Para hacerlo bien.</em></div>
+          <div class="slogan">Lo opuesto a una agencia de IA.</div>
+          <div class="slogan"><em>Cada automatización</em> tiene un autor.</div>
+        </div>
+        <p class="statement"><strong>Visión.</strong> Que en cinco años existan dos tipos de empresas: las que armaron sus sistemas en una agencia genérica, y las que los pidieron en un taller. Las segundas son nuestros clientes. Las segundas tienen marca propia donde antes había Excel.</p>
+        <p class="statement"><strong>Diferenciación.</strong> Trabajamos al ritmo del oficio, no al ritmo del fundraising. Cobramos por proyecto, no por hora. Aceptamos quince clientes a la vez, no quince mil. Esa es la promesa — y no se escala.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     DIRECCIÓN 03 — RUNTIME
+     ════════════════════════════════════════ -->
+<section id="dir-03" class="dir" data-screen-label="06 Dirección 03 Runtime">
+  <span class="dir-num">Dirección 03 / 04</span>
+
+  <div class="doc">
+    <div class="dir-head">
+      <div class="label">§ 06<br />Sistema<br />operativo</div>
+      <h2 class="dir-name" style="font-family:'Geist Mono',monospace;font-size:clamp(64px,10vw,150px);letter-spacing:-.04em">Runtime</h2>
+      <p class="dir-tagline" style="font-family:'Geist Mono',monospace;font-style:normal;letter-spacing:-.005em;font-size:clamp(18px,1.9vw,24px)">// la capa que orquesta el negocio.</p>
+    </div>
+
+    <div class="identity">
+      <div class="id-block">
+        <h4>Paleta — Dark · acid green</h4>
+        <div class="palette">
+          <div class="swatch" style="background:#0A0A0B"><span class="name">Void</span><span class="hex">#0A0A0B</span></div>
+          <div class="swatch" style="background:#22221F"><span class="name">Carbon</span><span class="hex">#22221F</span></div>
+          <div class="swatch" style="background:#6E6C68"><span class="name">Grey</span><span class="hex">#6E6C68</span></div>
+          <div class="swatch on-light" style="background:#B6F36A;color:rgba(0,0,0,.7)"><span class="name">Acid</span><span class="hex">#B6F36A</span></div>
+          <div class="swatch on-light" style="background:#E7E5E0"><span class="name">Bone</span><span class="hex">#E7E5E0</span></div>
+        </div>
+        <p class="muted" style="font-size:13px;line-height:1.55;margin-top:16px;max-width:42ch">Dark mode como default — no como modo alternativo. El acid green funciona como cursor parpadeante: solo aparece donde hay acción real. Todo lo demás es escala de grises bien medida.</p>
+      </div>
+
+      <div class="id-block">
+        <h4>Tipografía — Mono técnica + sans secundaria</h4>
+        <div class="typeset">
+          <div class="type-row">
+            <div class="type-label"><span>Display · Geist Mono 500</span><span>32 / 56 / 88</span></div>
+            <div class="type-sample" style="font-family:'Geist Mono',monospace;font-weight:500;font-size:42px;letter-spacing:-.01em;line-height:1">runtime/* </div>
+          </div>
+          <div class="type-row">
+            <div class="type-label"><span>Body · Geist Mono 400</span><span>13 / 14 / 16</span></div>
+            <div class="type-sample" style="font-family:'Geist Mono',monospace;font-weight:400;font-size:14px;letter-spacing:0;line-height:1.6">Una API + un panel + alertas en Slack. Lo demás es ruido. Documentación primera, demos segunda.</div>
+          </div>
+          <div class="type-row">
+            <div class="type-label"><span>Acento · Geist 500 sans</span><span>11 / 13</span></div>
+            <div class="type-sample" style="font-family:'Geist',sans-serif;font-weight:500;font-size:13px;letter-spacing:.04em">Para CTAs y precios, cuando importa leerse rápido.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="h-m" style="margin:0 0 32px">Personalidad y tono.</h3>
+
+      <div class="aspect">
+        <div class="aspect-label">Personalidad</div>
+        <div class="aspect-body">
+          <p>Builder, técnico, anti-marketing. Runtime habla como un README — primero qué hace, después por qué importa. Cero adjetivos. Endpoints públicos, changelog en home.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Tono</div>
+        <div class="aspect-body">
+          <p style="font-family:'Geist Mono',monospace;font-size:14px"><code>POST /workflows  →  ejecuta un workflow desde cualquier sistema. Sin login, sin UI, sin contrato. Token de prueba en 30s.</code></p>
+          <p class="muted">Imperativo. Snippets en lugar de párrafos. Stack visible: "corremos sobre Cloudflare Workers + Postgres + tu cuenta de Drive". Precios públicos.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Cliente ideal</div>
+        <div class="aspect-body">
+          <p>Equipos técnicos dentro de pymes (1–5 devs), founders que codean, agencias de desarrollo que revenden infra, CTOs de scale-ups. Comprador: técnico. Decisión por trial, conversión self-serve, ticket bajo-medio que crece con uso.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Percepción</div>
+        <div class="aspect-body">
+          <p>"Estos entienden lo que necesito. Ya tienen docs. Ya tengo el SDK en npm. Ya gasté la primera hora gratis. ¿Quién aprueba la AMEX?"</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Ventajas / Riesgos</div>
+        <div class="aspect-body">
+          <div class="pros-cons">
+            <div>
+              <h5>A favor</h5>
+              <ul>
+                <li>Confianza inmediata con builders — el público más exigente</li>
+                <li>Self-serve real → cero costo de adquisición unitario</li>
+                <li>Marca técnica escala sola (npm, GitHub, HN)</li>
+                <li>Fundadores técnicos pueden hablarla sin actuar</li>
+              </ul>
+            </div>
+            <div>
+              <h5 style="visibility:hidden">.</h5>
+              <ul class="cons">
+                <li>Comprador no-técnico (dueño de pyme) puede no entrar</li>
+                <li>Ticket bajo a la entrada → necesita volumen o expansion</li>
+                <li>Difícil vender a través de proceso de compra tradicional</li>
+                <li>Tono dev puede chocar con el cliente LATAM medio</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Inspiración</div>
+        <div class="aspect-body">
+          <div class="refs-row">
+            <span class="ref">Retool / utility para builders</span>
+            <span class="ref">Railway / DX como diferencia</span>
+            <span class="ref">Supabase / open-source confianza</span>
+            <span class="ref">Vercel dark / mono cinematográfica</span>
+            <span class="ref">Cursor / dev tool premium</span>
+            <span class="ref">Linear API page / docs como producto</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo zone — Runtime -->
+    <div class="demo">
+      <span class="demo-cap">Prototipo conceptual · Runtime</span>
+      <div class="demo-row">
+        <div class="demo-cell" style="background:#0A0A0B;color:#E7E5E0;padding:56px">
+          <div class="d-eye" style="margin-bottom:36px">runtime · v1.4.2 · status: <span style="color:#B6F36A">all systems operational</span></div>
+          <div class="d-head" style="font-family:'Geist Mono',monospace">$ runtime<br />&nbsp;&nbsp;deploy<br />&nbsp;&nbsp;<span style="color:#B6F36A">→ ok</span></div>
+          <p class="d-sub" style="margin-top:32px;font-family:'Geist Mono',monospace">// la capa de automatización que corre tu negocio<br />// API-first, mono-priced, self-serve real<br />// instalada en 30 segundos, no en 6 semanas</p>
+          <div style="margin-top:36px;display:flex;gap:14px;align-items:center">
+            <div style="background:#B6F36A;color:#0A0A0B;font-family:'Geist',sans-serif;font-size:13px;font-weight:600;padding:11px 20px;border-radius:3px">npm i @runtime/sdk</div>
+            <div style="font-family:'Geist Mono',monospace;font-size:11px;color:#6E6C68">→ docs.runtime.sh</div>
+          </div>
+        </div>
+
+        <div class="demo-cell" style="background:#131316;display:flex;align-items:center;justify-content:center;padding:48px">
+          <!-- Code panel mock -->
+          <div style="width:100%;max-width:380px;background:#0A0A0B;border:.5px solid #22221F;border-radius:4px;overflow:hidden;font-family:'Geist Mono',monospace">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:.5px solid #22221F;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6E6C68">
+              <span>workflow · invoice-sync</span><span style="color:#B6F36A">● running</span>
+            </div>
+            <div style="padding:18px 16px;font-size:12px;line-height:1.7;color:#E7E5E0">
+              <div style="color:#6E6C68">// triggered every 5 min</div>
+              <div style="margin-top:6px"><span style="color:#B6F36A">const</span> <span>orders</span> = <span style="color:#B6F36A">await</span> tienda.list();</div>
+              <div><span style="color:#B6F36A">const</span> <span>filtered</span> = orders.filter(<span style="color:#6E6C68">o =&gt; o.paid</span>);</div>
+              <div><span style="color:#B6F36A">await</span> contable.sync(filtered);</div>
+              <div style="margin-top:10px;color:#6E6C68">// last run: 09:04:12 · 41 ops · 0.83s</div>
+            </div>
+            <div style="border-top:.5px solid #22221F;display:grid;grid-template-columns:repeat(3,1fr)">
+              <div style="padding:12px;border-right:.5px solid #22221F">
+                <div style="font-size:9px;letter-spacing:.12em;color:#6E6C68;text-transform:uppercase">runs/h</div>
+                <div style="font-size:22px;color:#E7E5E0;font-weight:500;margin-top:4px">12</div>
+              </div>
+              <div style="padding:12px;border-right:.5px solid #22221F">
+                <div style="font-size:9px;letter-spacing:.12em;color:#6E6C68;text-transform:uppercase">p95</div>
+                <div style="font-size:22px;color:#E7E5E0;font-weight:500;margin-top:4px">0.91s</div>
+              </div>
+              <div style="padding:12px">
+                <div style="font-size:9px;letter-spacing:.12em;color:#6E6C68;text-transform:uppercase">error</div>
+                <div style="font-size:22px;color:#B6F36A;font-weight:500;margin-top:4px">0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Naming -->
+    <div class="naming">
+      <div class="naming-head">
+        <h3 style="font-family:'Geist Mono',monospace;font-size:36px;letter-spacing:-.02em">// nombres · 03</h3>
+        <div class="mono" style="max-width:36ch;color:var(--mute);line-height:1.55">Una o dos sílabas · raíz técnica/inglesa · suena a primitivo de software · subdomain-friendly.</div>
+      </div>
+      <div class="naming-grid">
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Runtime</div><div class="pron">/rán·taim/</div><div class="gloss">El momento en que el código corre. Primitivo técnico universal.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Daemon</div><div class="pron">/dí·mon/</div><div class="gloss">Proceso de fondo en Unix. Builder vocabulary, lectura técnica directa.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Mesh</div><div class="pron">/mésh/</div><div class="gloss">Red interconectada. Service mesh, red mesh — vocabulario actual.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Yield</div><div class="pron">/yíld/</div><div class="gloss">Devolver un valor en una función. Rendimiento y output al mismo tiempo.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Modula</div><div class="pron">/mó·du·la/</div><div class="gloss">Modular en latín. Sistema de módulos componibles.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Rune</div><div class="pron">/rún/</div><div class="gloss">Símbolo nórdico. Corto, memorable, .com de cuatro letras valioso.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Anvil</div><div class="pron">/án·vil/</div><div class="gloss">Yunque en inglés. Builder forging — lectura instantánea de oficio técnico.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Crate</div><div class="pron">/kréit/</div><div class="gloss">Paquete en Rust. Familiar para devs, neutral para no-devs.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Sigil</div><div class="pron">/sí·gil/</div><div class="gloss">Símbolo con poder. Misterio + precisión, .com de cinco letras.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Patch</div><div class="pron">/pátch/</div><div class="gloss">Parche, mejora pequeña. Cultura dev, dirección incremental.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Lattice</div><div class="pron">/lá·tis/</div><div class="gloss">Retícula estructural. Suena a sistema sólido y geométrico.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Boya</div><div class="pron">/bó·ya/</div><div class="gloss">Marcador flotante. Castellano, raro, técnico-marítimo, .com viable.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Cifra</div><div class="pron">/sí·fra/</div><div class="gloss">Número, código cifrado. Doble lectura: dato + seguridad.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Geist Mono',monospace;font-size:32px">Atomo</div><div class="pron">/á·to·mo/</div><div class="gloss">Unidad indivisible. Cultura design system (atomic) + ciencia.</div></div>
+      </div>
+    </div>
+
+    <!-- Positioning -->
+    <div class="positioning">
+      <div class="label">Posicionamiento</div>
+      <div>
+        <div class="slogans">
+          <div class="slogan" style="font-family:'Geist Mono',monospace;font-size:clamp(24px,3vw,42px);letter-spacing:-.01em">// la capa que corre tu negocio</div>
+          <div class="slogan" style="font-family:'Geist Mono',monospace;font-size:clamp(24px,3vw,42px);letter-spacing:-.01em">$ runtime deploy <em style="color:var(--mute)">// 30 segundos</em></div>
+          <div class="slogan" style="font-family:'Geist Mono',monospace;font-size:clamp(24px,3vw,42px);letter-spacing:-.01em">api-first. Sin propuesta comercial.</div>
+          <div class="slogan" style="font-family:'Geist Mono',monospace;font-size:clamp(24px,3vw,42px);letter-spacing:-.01em">precios públicos. <em style="color:var(--mute)">demos privadas.</em></div>
+        </div>
+        <p class="statement"><strong>Visión.</strong> Cada pyme tiene tres developers y mil herramientas. Runtime es la capa donde esas herramientas hablan entre sí — un workflow engine con SDK, CLI y panel. Cobra por ejecución, no por usuario. Escala con el negocio del cliente, no contra él.</p>
+        <p class="statement"><strong>Diferenciación.</strong> Nadie en LATAM compite con DX. La promesa no es "te automatizamos" — es "te damos el primitivo y vos lo armás". El sello es la documentación: si nuestros docs son los mejores del mercado hispano, ganamos por default.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     DIRECCIÓN 04 — POSTA
+     ════════════════════════════════════════ -->
+<section id="dir-04" class="dir" data-screen-label="07 Dirección 04 Posta">
+  <span class="dir-num">Dirección 04 / 04</span>
+
+  <div class="doc">
+    <div class="dir-head">
+      <div class="label">§ 07<br />Cercano<br />LATAM</div>
+      <h2 class="dir-name" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.04em;font-size:clamp(90px,13vw,200px)">Posta.</h2>
+      <p class="dir-tagline" style="font-family:'Space Grotesk',sans-serif;font-style:normal;font-weight:500;color:#1A4DE0;font-size:clamp(20px,2.2vw,28px)">Bueno en serio, no en serie.</p>
+    </div>
+
+    <div class="identity">
+      <div class="id-block">
+        <h4>Paleta — Crema cálida + azul eléctrico</h4>
+        <div class="palette">
+          <div class="swatch on-light" style="background:#FBF9F4"><span class="name">Cream</span><span class="hex">#FBF9F4</span></div>
+          <div class="swatch on-light" style="background:#E1DBCC"><span class="name">Sand</span><span class="hex">#E1DBCC</span></div>
+          <div class="swatch on-light" style="background:#F2C94C;color:rgba(0,0,0,.65)"><span class="name">Sol</span><span class="hex">#F2C94C</span></div>
+          <div class="swatch" style="background:#1A4DE0"><span class="name">Bondi</span><span class="hex">#1A4DE0</span></div>
+          <div class="swatch" style="background:#1B1A18"><span class="name">Carbón</span><span class="hex">#1B1A18</span></div>
+        </div>
+        <p class="muted" style="font-size:13px;line-height:1.55;margin-top:16px;max-width:42ch">Calidez de papel + un azul que no pide perdón. El amarillo aparece sólo en momentos de celebración (estados de éxito, anuncios). El conjunto se siente latinoamericano sin caer en folclorismo.</p>
+      </div>
+
+      <div class="id-block">
+        <h4>Tipografía — Grotesque moderno + sans neutra</h4>
+        <div class="typeset">
+          <div class="type-row">
+            <div class="type-label"><span>Display · Space Grotesk 600</span><span>40 / 64 / 96</span></div>
+            <div class="type-sample" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:46px;letter-spacing:-.025em;line-height:.98">La pyme que <span style="color:#1A4DE0">se hace cargo.</span></div>
+          </div>
+          <div class="type-row">
+            <div class="type-label"><span>Body · Geist 400</span><span>15 / 17 / 21</span></div>
+            <div class="type-sample" style="font-family:'Geist',sans-serif;font-weight:400;font-size:17px;letter-spacing:0;line-height:1.55">Conectamos lo que ya usás — Mercado Pago, AFIP, tu mail, tu sistema — y armamos los procesos que tu equipo no debería hacer a mano.</div>
+          </div>
+          <div class="type-row">
+            <div class="type-label"><span>Mono · JetBrains Mono 500</span><span>10 / 11 / 13</span></div>
+            <div class="type-sample" style="font-family:'JetBrains Mono',monospace;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#1A4DE0">Posta · Buenos Aires · 2026 →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="h-m" style="margin:0 0 32px">Personalidad y tono.</h3>
+
+      <div class="aspect">
+        <div class="aspect-label">Personalidad</div>
+        <div class="aspect-body">
+          <p>Cercano, directo, sin solemnidad pero con compromiso. Posta usa el voseo cuando corresponde, explica sin tecnicismos, y nunca promete lo que no puede entregar. Es la marca que se sienta en la mesa de la pyme — no la que manda email.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Tono</div>
+        <div class="aspect-body">
+          <p><strong>"Vos seguís facturando. Nosotros nos ocupamos del resto: AFIP, conciliación con el banco, los remitos, el reporte para el contador. Lunes 9 AM ya está hecho."</strong></p>
+          <p class="muted">Vos, no usted. Frases que entiende tu vieja. Cero anglicismos innecesarios — "workflow" → "proceso", "dashboard" → "panel". Honestidad sobre lo que cuesta.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Cliente ideal</div>
+        <div class="aspect-body">
+          <p>Pymes y emprendedores LATAM (Argentina, México, Colombia, Chile): comercios, distribuidoras, gestoras, profesionales independientes, contadores con cartera propia, startups en su primer año. Comprador: el dueño o el segundo de la empresa. Decisión rápida, ticket bajo-medio, retención por utilidad real.</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Percepción</div>
+        <div class="aspect-body">
+          <p>"Acá entienden cómo es. No me hablan en marciano. Lo que me prometieron, lo hicieron. Y vale lo que vale."</p>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Ventajas / Riesgos</div>
+        <div class="aspect-body">
+          <div class="pros-cons">
+            <div>
+              <h5>A favor</h5>
+              <ul>
+                <li>Penetración rápida en el mercado más grande de LATAM</li>
+                <li>Voz auténtica — dos fundadores de Lanús, sin actuar</li>
+                <li>Producto self-serve viable + canal por contador socio</li>
+                <li>Espacio de marca enorme: nadie está acá todavía</li>
+              </ul>
+            </div>
+            <div>
+              <h5 style="visibility:hidden">.</h5>
+              <ul class="cons">
+                <li>Techo de ticket: pymes pagan poco, hay que volumetrizar</li>
+                <li>"Local" puede sonar chico para enterprise futuro</li>
+                <li>Riesgo de mezclarse con apps de fintech genéricas</li>
+                <li>Naming muy localista limita expansión a otros idiomas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aspect">
+        <div class="aspect-label">Inspiración</div>
+        <div class="aspect-body">
+          <div class="refs-row">
+            <span class="ref">Notion / accesibilidad sin perder craft</span>
+            <span class="ref">Stripe / honestidad de precio</span>
+            <span class="ref">Cabify / LATAM con producción cuidada</span>
+            <span class="ref">Ualá / calidez fintech</span>
+            <span class="ref">Mercado Libre / confianza regional</span>
+            <span class="ref">Linear / sistema sin frialdad</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo zone — Posta -->
+    <div class="demo">
+      <span class="demo-cap">Prototipo conceptual · Posta</span>
+      <div class="demo-row">
+        <div class="demo-cell" style="background:#FBF9F4;padding:56px 56px 56px">
+          <div class="d-eye" style="margin-bottom:32px">Posta · Para pymes que se hacen cargo</div>
+          <div class="d-head">El lunes a<br />las nueve <em>ya<br />está hecho</em>.</div>
+          <p class="d-sub" style="margin-top:28px">Vos seguís vendiendo, atendiendo, viviendo. Nosotros conectamos AFIP, tu banco, tu mail y tu sistema. Los procesos que te comen el día, hechos solos.</p>
+          <div style="margin-top:36px;display:flex;gap:12px;align-items:center">
+            <div style="background:#1A4DE0;color:#FBF9F4;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;padding:13px 22px;border-radius:8px">Probar 14 días</div>
+            <div style="background:transparent;color:#1B1A18;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:500;padding:13px 18px;border:1.5px solid #1B1A18;border-radius:8px">Ver demo · 2 min</div>
+          </div>
+        </div>
+
+        <div class="demo-cell" style="background:#F2EFE6;display:flex;align-items:center;justify-content:center;padding:48px">
+          <!-- Friendly app card mock -->
+          <div style="width:100%;max-width:380px;background:#FBF9F4;border-radius:12px;overflow:hidden;border:.5px solid rgba(27,26,24,.1);box-shadow:0 6px 32px rgba(27,26,24,.08)">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:.5px solid rgba(27,26,24,.08)">
+              <div style="display:flex;gap:8px;align-items:center">
+                <div style="width:24px;height:24px;border-radius:6px;background:#1A4DE0;display:flex;align-items:center;justify-content:center;color:#FBF9F4;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px">P</div>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px">Tu pyme · Lunes 9:04</span>
+              </div>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#1A4DE0;letter-spacing:.08em;text-transform:uppercase">Al día</span>
+            </div>
+            <div style="padding:22px 20px">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#6B655B;margin-bottom:8px">Hecho mientras dormías</div>
+              <div style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:600;letter-spacing:-.02em;color:#1B1A18;line-height:1">23 tareas</div>
+              <div style="font-family:'Geist',sans-serif;font-size:13px;color:#6B655B;margin-top:6px">12 facturas · 8 conciliaciones · 3 reportes</div>
+            </div>
+            <div style="padding:0 20px 20px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#F2EFE6;border-radius:8px">
+                <div>
+                  <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;color:#1B1A18">Conciliación · Galicia</div>
+                  <div style="font-family:'Geist',sans-serif;font-size:11px;color:#6B655B;margin-top:2px">$284.500 · 42 movimientos</div>
+                </div>
+                <div style="background:#F2C94C;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:#1B1A18;font-weight:700">✓</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#F2EFE6;border-radius:8px">
+                <div>
+                  <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;color:#1B1A18">Facturas · AFIP</div>
+                  <div style="font-family:'Geist',sans-serif;font-size:11px;color:#6B655B;margin-top:2px">12 emitidas · 0 errores</div>
+                </div>
+                <div style="background:#F2C94C;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:#1B1A18;font-weight:700">✓</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#F2EFE6;border-radius:8px">
+                <div>
+                  <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;color:#1B1A18">Reporte semanal</div>
+                  <div style="font-family:'Geist',sans-serif;font-size:11px;color:#6B655B;margin-top:2px">Para el contador · enviado</div>
+                </div>
+                <div style="background:#F2C94C;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:#1B1A18;font-weight:700">✓</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Naming -->
+    <div class="naming">
+      <div class="naming-head">
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600">Nombres · Dirección 04</h3>
+        <div class="mono" style="max-width:36ch;color:var(--mute);line-height:1.55">Castellano, dos sílabas preferidas, palabras concretas con calidez · evoca herramienta cotidiana, no software.</div>
+      </div>
+      <div class="naming-grid">
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Posta</div><div class="pron">/pós·ta/</div><div class="gloss">"En serio". Palabra LATAM honesta, declaración de seriedad sin solemnidad.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Cancha</div><div class="pron">/kán·cha/</div><div class="gloss">Experiencia + lugar. "Tener cancha". Confianza de oficio adquirido.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Andén</div><div class="pron">/an·dén/</div><div class="gloss">Plataforma desde la que partís. Universal en español, no localista.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Pieza</div><div class="pron">/pi·é·sa/</div><div class="gloss">Unidad de algo + cuarto. Industrial pero cálido, evoca artesanía.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Bisagra</div><div class="pron">/bi·sá·gra/</div><div class="gloss">Pieza que conecta. "Momento bisagra". Conector + inflexión.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Trama</div><div class="pron">/trá·ma/</div><div class="gloss">Estructura tejida, hilos cruzados. Sistema implícito sin ser tecnicismo.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Pulso</div><div class="pron">/púl·so/</div><div class="gloss">Ritmo del negocio. Vital, simple, dirige a salud del proceso.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Rumbo</div><div class="pron">/rúm·bo/</div><div class="gloss">Dirección elegida. Implica decisión, proyecto, claridad.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Hilera</div><div class="pron">/i·lé·ra/</div><div class="gloss">Fila ordenada. Concreto, visual, sin pretensión.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Levante</div><div class="pron">/le·bán·te/</div><div class="gloss">Acción de levantar. Energía, comienzo, "el levante" como momento.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Cifra</div><div class="pron">/sí·fra/</div><div class="gloss">Número que cuenta. Suena a fintech sin perder warmth.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Tonada</div><div class="pron">/to·ná·da/</div><div class="gloss">Forma de hablar de un lugar. Identidad regional sin folclorismo.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Norte</div><div class="pron">/nór·te/</div><div class="gloss">"Tener norte". Dirección, propósito, claridad.</div></div>
+        <div class="name-cell"><div class="nm" style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em">Avance</div><div class="pron">/a·bán·se/</div><div class="gloss">Progreso medido. Cotidiano, optimista pero sobrio.</div></div>
+      </div>
+    </div>
+
+    <!-- Positioning -->
+    <div class="positioning">
+      <div class="label">Posicionamiento</div>
+      <div>
+        <div class="slogans">
+          <div class="slogan" style="font-family:'Space Grotesk',sans-serif;font-weight:600">Posta. <em>Bueno en serio.</em></div>
+          <div class="slogan" style="font-family:'Space Grotesk',sans-serif;font-weight:600">El lunes a las nueve <em>ya está hecho.</em></div>
+          <div class="slogan" style="font-family:'Space Grotesk',sans-serif;font-weight:600">La pyme que <span style="color:#1A4DE0">se hace cargo.</span></div>
+          <div class="slogan" style="font-family:'Space Grotesk',sans-serif;font-weight:600"><em>Lo que ya hacés,</em> hecho solo.</div>
+        </div>
+        <p class="statement"><strong>Visión.</strong> En LATAM hay millones de pymes haciendo a mano cosas que podrían hacerse solas. No porque sean tontas — porque nadie les armó la herramienta en su idioma, a su precio, con sus integraciones. Posta es esa herramienta. La pyme la entiende en cinco minutos, la usa el lunes, paga en pesos.</p>
+        <p class="statement"><strong>Diferenciación.</strong> Nadie en LATAM hace este producto con esta calidad de marca. Notion no integra AFIP. Zapier no habla español. Las "consultoras de IA" cobran un proyecto enterprise por algo que debería costar un mes de café. Posta es lo que pasa cuando dos pibes de Lanús deciden hacer software como Stripe pero para el barrio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     COMPARATIVA
+     ════════════════════════════════════════ -->
+<section id="compare" class="compare" data-screen-label="08 Comparativa">
+  <div class="doc">
+    <div class="eyebrow" style="margin-bottom:16px">§ 08 · Comparativa</div>
+    <h2 class="h-l" style="margin:0 0 24px;max-width:18ch">Las cuatro, lado a lado.</h2>
+    <p class="body-l muted">Una sola tabla, ocho ejes. No hay "ganadora" objetiva — hay una más alineada con lo que ustedes dos quieren ser este año, y otra a la que pueden migrar en dos.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>01 · Norden</th>
+          <th>02 · Taller</th>
+          <th>03 · Runtime</th>
+          <th>04 · Posta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="k">Posicionamiento</td>
+          <td class="nm-cell">Norden</td>
+          <td class="nm-cell" style="font-style:italic">Taller</td>
+          <td class="nm-cell" style="font-family:var(--mono)">Runtime</td>
+          <td class="nm-cell" style="font-family:'Space Grotesk',sans-serif;font-weight:600">Posta</td>
+        </tr>
+        <tr>
+          <td class="k">Cliente</td>
+          <td>Pyme madura 30–300 emp.</td>
+          <td>Founders, estudios premium</td>
+          <td>Devs, CTOs, agencias</td>
+          <td>Pymes & emprendedores LATAM</td>
+        </tr>
+        <tr>
+          <td class="k">Ticket</td>
+          <td>Alto · contrato anual</td>
+          <td>Medio · proyecto-a-proyecto</td>
+          <td>Bajo creciente · uso</td>
+          <td>Bajo · suscripción mensual</td>
+        </tr>
+        <tr>
+          <td class="k">Canal</td>
+          <td>Outbound + referrals</td>
+          <td>Inbound editorial + word of mouth</td>
+          <td>Self-serve + docs + comunidad</td>
+          <td>Self-serve + contadores socios</td>
+        </tr>
+        <tr>
+          <td class="k">Tono</td>
+          <td>Institucional, tercera persona</td>
+          <td>Editorial, primera persona del plural</td>
+          <td>Técnico, README, imperativo</td>
+          <td>Cercano, voseo, sin tecnicismos</td>
+        </tr>
+        <tr>
+          <td class="k">Color</td>
+          <td>Monocromo grafito</td>
+          <td>Crema + terracota</td>
+          <td>Dark + acid green</td>
+          <td>Crema + azul eléctrico</td>
+        </tr>
+        <tr>
+          <td class="k">Tipo</td>
+          <td>Sans neutra (Geist)</td>
+          <td>Serif display (Instrument)</td>
+          <td>Mono (Geist Mono)</td>
+          <td>Grotesque (Space Grotesk)</td>
+        </tr>
+        <tr>
+          <td class="k">Techo</td>
+          <td>Enterprise · global</td>
+          <td>Boutique · 50–100 clientes max</td>
+          <td>Global self-serve sin techo</td>
+          <td>Regional con ramp-up rápido</td>
+        </tr>
+        <tr>
+          <td class="k">Riesgo principal</td>
+          <td>Sonar grande siendo dos personas</td>
+          <td>No escalar más allá del oficio</td>
+          <td>Excluir al comprador no-técnico</td>
+          <td>Quedarse chico en LATAM-solo</td>
+        </tr>
+        <tr>
+          <td class="k">Ajuste fundadores</td>
+          <td>Medio (gap de aura)</td>
+          <td>Alto (artesanía + craft)</td>
+          <td>Alto (uno codea, el otro contabiliza)</td>
+          <td>Muy alto (dos de Lanús, sin actuar)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     CLOSING — recomendación + próximos pasos
+     ════════════════════════════════════════ -->
+<section id="closing" class="closing" data-screen-label="09 Cierre">
+  <div class="doc">
+    <div class="eyebrow" style="margin-bottom:24px">§ 09 · Cierre</div>
+    <h2 class="closing-head">No elijan la <em style="color:var(--mute);font-style:italic">perfecta</em>. Elijan la que <em style="font-style:italic">se parezca</em>.</h2>
+
+    <p class="body-l" style="max-width:62ch;margin-bottom:48px">Si tuviera que recomendar una sola dirección para arrancar — leyendo el contexto, el mercado y a los fundadores — diría <strong>Posta</strong> con un puente claro a <strong>Taller</strong> cuando el ticket suba. <em>Norden</em> es a dos años; <em>Runtime</em> es un producto distinto que podría convivir como spin-off técnico. Pero el documento entero existe para que ustedes vean el espacio completo, no para que confíen en mi recomendación.</p>
+
+    <div class="closing-grid">
+      <div class="closing-col">
+        <h4>El argumento por Posta</h4>
+        <p>Es la única dirección donde la marca <em>no miente</em>. Dos pibes de Lanús construyendo herramientas en español para pymes argentinas es una historia que se cuenta sola — y es la verdad. Ticket bajo + volumen + canal contador es un modelo que cierra hoy, no en dos rondas.</p>
+      </div>
+      <div class="closing-col">
+        <h4>Por qué Taller en paralelo</h4>
+        <p>Posta es el producto. Taller puede ser la marca corporativa. "Posta es un producto de Taller, el estudio que diseña automatizaciones a medida". Esto resuelve el problema de escalar el ticket sin perder el alma. Es Stripe + Stripe Press, en miniatura.</p>
+      </div>
+      <div class="closing-col">
+        <h4>Próximos pasos</h4>
+        <p style="margin-bottom:6px">— Cortar de 14–15 nombres a 3–4 por dirección que sobrevivan al test del WhatsApp.</p>
+        <p style="margin-bottom:6px">— Verificar .com / .com.ar disponibilidad real.</p>
+        <p style="margin-bottom:6px">— Mockear una landing real (no conceptual) de la dirección elegida.</p>
+        <p>— Test de tono: redactar un email comercial real en cada voz, ver cuál fluye.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:96px;padding-top:32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
+      <div class="mono">Marca · Exploración de identidad · v0.1 · 2026</div>
+      <div class="mono" style="color:var(--soft)">Documento iterativo. Panel <span class="tag">Tweaks</span> en la esquina inferior derecha.</div>
+    </div>
+  </div>
+</section>
+
+<!-- React app (tweaks + nav) -->
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+
+</body>
+</html>
