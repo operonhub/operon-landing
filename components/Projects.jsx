@@ -14,7 +14,7 @@ const projects = [
   },
   {
     live: true,
-    url: "https://aberturasfar.netlify.app/",
+    url: "https://aberturas-far.vercel.app/",
     image: "/projects/aberturas-far.png",
     cat: "Web corporativa",
     title: "Aberturas FAR",

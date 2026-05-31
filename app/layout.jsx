@@ -1,24 +1,66 @@
 import "./globals.css";
 
+const SITE = "https://operonhub.com";
+
 export const metadata = {
-  title: "Operon — Automatizaciones para pymes argentinas",
+  metadataBase: new URL(SITE),
+  title: {
+    default: "Operon — Automatizaciones para pymes argentinas",
+    template: "%s · Operon",
+  },
   description:
     "Software y automatizaciones que entendés y mantenés vos. Construidas en Argentina, para pymes que necesitan resolver hoy.",
-  metadataBase: new URL("https://operon.ar"),
+  applicationName: "Operon",
+  keywords: [
+    "automatizaciones",
+    "software a medida",
+    "SaaS",
+    "desarrollo web",
+    "pymes",
+    "Argentina",
+    "n8n",
+    "Next.js",
+  ],
+  authors: [{ name: "Operon", url: SITE }],
+  creator: "Operon",
+  publisher: "Operon",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
+    type: "website",
+    locale: "es_AR",
+    url: SITE,
+    siteName: "Operon",
+    title: "Operon — Automatizaciones que flotan",
+    description:
+      "Software especializado, SaaS y automatizaciones premium. Hechas en Argentina, para pymes argentinas.",
+    // app/opengraph-image.png is picked up automatically by Next.js
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "Operon — Automatizaciones que flotan",
     description:
       "Software especializado, SaaS y automatizaciones premium. Hechas en Argentina.",
-    type: "website",
+    // app/twitter-image.png is picked up automatically by Next.js
   },
-  icons: {
-    icon: [
-      {
-        url:
-          "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 78'><circle cx='28' cy='24' r='21' fill='none' stroke='%2314130F' stroke-width='6'/><circle cx='28' cy='24' r='5.4' fill='%23F2C94C'/><path d='M22 45 L34 45 L28 53 Z' fill='%2314130F'/><path d='M28 53 C 24 61, 35 64, 30 78' fill='none' stroke='%2314130F' stroke-width='3.4' stroke-linecap='round'/></svg>",
-      },
-    ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+  // app/icon.png, app/apple-icon.png and app/favicon.ico are auto-detected
+};
+
+export const viewport = {
+  themeColor: "#FBF9F4",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {

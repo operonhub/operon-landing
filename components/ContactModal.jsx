@@ -220,9 +220,9 @@ export default function ContactModal() {
                     <path d="M3 11l5 5L19 5" />
                   </svg>
                 </div>
-                <h4 className="font-display font-semibold text-[22px] tracking-tight">
+                <h3 className="font-display font-semibold text-[22px] tracking-tight">
                   Listo.
-                </h4>
+                </h3>
                 <p className="mt-2 text-[14px] text-mute max-w-[34ch] mx-auto leading-[1.55]">
                   Te abrimos el email con todo precargado. Apretá enviar y te respondemos a la brevedad.
                 </p>

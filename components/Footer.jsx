@@ -19,7 +19,7 @@ export default function Footer() {
             { h: "Contacto", links: ["hola@operon.ar", "Buenos Aires, AR", "LinkedIn", "GitHub"] },
           ].map((c) => (
             <div key={c.h} className="pt-1">
-              <h4 className="font-mono-up text-paper/40 mb-6 pb-3 border-b border-paper/10">{c.h}</h4>
+              <h3 className="font-mono-up text-paper/40 mb-6 pb-3 border-b border-paper/10">{c.h}</h3>
               {c.links.map((l) => (
                 <a key={l} href="#" className="block text-[14px] text-paper/80 py-2 hover:text-sol">
                   {l}
