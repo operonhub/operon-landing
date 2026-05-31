@@ -16,7 +16,7 @@ export default function Footer() {
           {[
             { h: "Compañía", links: ["Servicios", "Proyectos", "Proceso", "Por qué Operon"] },
             { h: "Recursos", links: ["Casos completos", "Stack tecnológico", "Política de datos"] },
-            { h: "Contacto", links: ["hola@operon.ar", "Buenos Aires, AR", "LinkedIn", "GitHub"] },
+            { h: "Contacto", links: ["hola@operonhub.com", "Buenos Aires, AR", "LinkedIn", "GitHub"] },
           ].map((c) => (
             <div key={c.h} className="pt-1">
               <h3 className="font-mono-up text-paper/40 mb-6 pb-3 border-b border-paper/10">{c.h}</h3>

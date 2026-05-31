@@ -6,7 +6,8 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const FONTS_DIR = join(__dirname, 'fonts');
-const APP_DIR = join(__dirname, '..', 'app');
+const APP_DIR = join(__dirname, '..', 'app');       // og + twitter (magic files)
+const PUB_DIR = join(__dirname, '..', 'public');    // favicons (explicit metadata.icons)
 
 const C = {
   paper: '#FBF9F4', ink: '#14130F', blue: '#1F40C2', sol: '#F2C94C',
@@ -83,7 +84,7 @@ function renderPng(svg, w, h, file) {
     <rect width="${W}" height="${H}" rx="112" fill="${C.ink}"/>
     ${balloon({ x: W/2 - 145, y: H/2 - 205, s: 5.2, color: C.paper, accent: C.sol, stroke: 5.2 })}
   </svg>`;
-  renderPng(svg, W, H, join(APP_DIR, 'icon.png'));
+  renderPng(svg, W, H, join(PUB_DIR, 'icon.png'));
 }
 
 // ── Apple icon (180×180, padded) ────────────────────────────────────────
@@ -94,7 +95,7 @@ function renderPng(svg, w, h, file) {
     <rect width="${W}" height="${H}" rx="40" fill="${C.ink}"/>
     ${balloon({ x: W/2 - 51, y: H/2 - 72, s: 1.82, color: C.paper, accent: C.sol, stroke: 5.4 })}
   </svg>`;
-  renderPng(svg, W, H, join(APP_DIR, 'apple-icon.png'));
+  renderPng(svg, W, H, join(PUB_DIR, 'apple-icon.png'));
 }
 
 // ── favicon.ico (48×48 png renamed; browsers accept png in .ico slot) ────
@@ -105,7 +106,7 @@ function renderPng(svg, w, h, file) {
     <rect width="${W}" height="${H}" rx="10" fill="${C.ink}"/>
     ${balloon({ x: W/2 - 13.5, y: H/2 - 19, s: 0.48, color: C.paper, accent: C.sol, stroke: 6 })}
   </svg>`;
-  renderPng(svg, W, H, join(APP_DIR, 'favicon.ico'));
+  renderPng(svg, W, H, join(PUB_DIR, 'favicon.ico'));
 }
 
 console.log('\n✓ SEO assets generados en /app');

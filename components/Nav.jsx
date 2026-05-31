@@ -15,6 +15,7 @@ export default function Nav() {
           <a href="#proyectos" className="hover:text-blue">Proyectos</a>
           <a href="#proceso" className="hover:text-blue">Proceso</a>
           <a href="#diferencial" className="hover:text-blue">Por qué Operon</a>
+          <a href="#faq" className="hover:text-blue">FAQ</a>
         </nav>
 
         <div className="flex items-center gap-2">

@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import BalloonMark from "./BalloonMark";
 
-const TO_EMAIL = "hola@operon.ar";
+const TO_EMAIL = "hola@operonhub.com";
 
 export default function ContactModal() {
   const [open, setOpen] = useState(false);
@@ -62,7 +62,7 @@ export default function ContactModal() {
       `Mensaje:`,
       form.mensaje,
       ``,
-      `— Enviado desde operon.ar`,
+      `— Enviado desde operonhub.com`,
     ];
     const body = encodeURIComponent(lines.join("\n"));
     const href = `mailto:${TO_EMAIL}?subject=${encodeURIComponent(subject)}&body=${body}`;
