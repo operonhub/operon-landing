@@ -19,7 +19,12 @@ export default function Page() {
       <Services />
       <Projects />
       <Process />
-      <Differential />
+      {/* "Por qué Operon" se oculta en mobile (<768px) para acortar el scroll.
+          Sigue en el HTML (display:none) → indexable por Google y sus puntos
+          ya se cubren en el FAQ. Visible en tablet y desktop. */}
+      <div className="hidden md:block">
+        <Differential />
+      </div>
       <Faq />
       <CtaFinal />
       <Footer />
