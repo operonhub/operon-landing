@@ -67,10 +67,10 @@ export default function CtaFinal() {
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </button>
             <a
-              href="mailto:hola@operonhub.com"
+              href="mailto:admin@operonhub.com"
               className="inline-flex items-center gap-2 border border-paper/30 text-paper font-display font-semibold text-[15px] px-5 py-4 rounded-xl hover:bg-paper hover:text-ink hover:border-paper"
             >
-              hola@operonhub.com
+              admin@operonhub.com
             </a>
           </motion.div>
 

@@ -22,8 +22,8 @@ export default function Faq() {
             </h2>
             <p className="mt-6 text-[15.5px] leading-[1.55] text-mute max-w-[34ch]">
               ¿Tenés una que no está acá? Escribinos a{" "}
-              <a href="mailto:hola@operonhub.com" className="text-blue hover:underline">
-                hola@operonhub.com
+              <a href="mailto:admin@operonhub.com" className="text-blue hover:underline">
+                admin@operonhub.com
               </a>{" "}
               y te respondemos en menos de 24 horas.
             </p>

@@ -3,7 +3,24 @@ import { useEffect, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import BalloonMark from "./BalloonMark";
 
-const TO_EMAIL = "hola@operonhub.com";
+const TO_EMAIL = "admin@operonhub.com";
+
+// Builds a mailto: link as a fallback if the API send fails.
+function mailtoHref(form) {
+  const subject = `[Operon] Nueva consulta · ${form.tipo}`;
+  const body = [
+    `Hola Operon,`,
+    ``,
+    `Nombre: ${form.nombre}`,
+    `Empresa: ${form.empresa || "—"}`,
+    `Email: ${form.email}`,
+    `Tipo de proyecto: ${form.tipo}`,
+    ``,
+    `Mensaje:`,
+    form.mensaje,
+  ].join("\n");
+  return `mailto:${TO_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 export default function ContactModal() {
   const [open, setOpen] = useState(false);
@@ -13,8 +30,11 @@ export default function ContactModal() {
     email: "",
     tipo: "Automatización",
     mensaje: "",
+    website: "", // honeypot — must stay empty
   });
-  const [sent, setSent] = useState(false);
+  // status: "idle" | "sending" | "sent" | "error"
+  const [status, setStatus] = useState("idle");
+  const sent = status === "sent";
 
   // Listen to data-open-contact clicks on the entire page
   useEffect(() => {
@@ -43,32 +63,29 @@ export default function ContactModal() {
 
   const close = useCallback(() => {
     setOpen(false);
-    setTimeout(() => setSent(false), 300);
+    setTimeout(() => setStatus("idle"), 300);
   }, []);
 
   const onChange = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    const subject = `[Operon] Nuevo contacto · ${form.tipo}`;
-    const lines = [
-      `Hola Operon,`,
-      ``,
-      `Nombre: ${form.nombre}`,
-      `Empresa: ${form.empresa || "—"}`,
-      `Email: ${form.email}`,
-      `Tipo de proyecto: ${form.tipo}`,
-      ``,
-      `Mensaje:`,
-      form.mensaje,
-      ``,
-      `— Enviado desde operonhub.com`,
-    ];
-    const body = encodeURIComponent(lines.join("\n"));
-    const href = `mailto:${TO_EMAIL}?subject=${encodeURIComponent(subject)}&body=${body}`;
-    // Open the user's email client
-    window.location.href = href;
-    setSent(true);
+    if (status === "sending") return;
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      if (!json.ok) throw new Error(json.error || "send failed");
+      setStatus("sent");
+    } catch (err) {
+      console.error("[contact] submit failed:", err);
+      setStatus("error");
+    }
   };
 
   return (
@@ -193,16 +210,43 @@ export default function ContactModal() {
                   />
                 </Field>
 
+                {/* Honeypot — hidden from humans, catches bots. */}
+                <div aria-hidden="true" className="absolute -left-[9999px] top-auto h-0 w-0 overflow-hidden">
+                  <label>
+                    No completar
+                    <input
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={form.website}
+                      onChange={onChange("website")}
+                    />
+                  </label>
+                </div>
+
+                {status === "error" && (
+                  <p className="text-[13px] leading-[1.5] text-ink bg-sol/30 border border-sol/60 rounded-lg px-3.5 py-2.5">
+                    No pudimos enviar el mensaje automáticamente. Probá de nuevo, o
+                    escribinos a{" "}
+                    <a href={mailtoHref(form)} className="text-blue font-medium hover:underline">
+                      {TO_EMAIL}
+                    </a>
+                    .
+                  </p>
+                )}
+
                 <div className="flex items-center justify-between flex-wrap gap-3 mt-2">
                   <span className="font-mono-up text-soft">
-                    Abre tu cliente de email
+                    Respuesta en &lt; 24 hs
                   </span>
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-2 bg-ink text-paper font-display font-semibold text-[14px] px-5 py-3 rounded-xl hover:bg-blue"
+                    disabled={status === "sending"}
+                    className="group inline-flex items-center gap-2 bg-ink text-paper font-display font-semibold text-[14px] px-5 py-3 rounded-xl hover:bg-blue disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Enviar mensaje
-                    <span className="transition-transform group-hover:translate-x-1">→</span>
+                    {status === "sending" ? "Enviando…" : "Enviar mensaje"}
+                    {status !== "sending" && (
+                      <span className="transition-transform group-hover:translate-x-1">→</span>
+                    )}
                   </button>
                 </div>
 
@@ -221,10 +265,11 @@ export default function ContactModal() {
                   </svg>
                 </div>
                 <h3 className="font-display font-semibold text-[22px] tracking-tight">
-                  Listo.
+                  Mensaje enviado.
                 </h3>
                 <p className="mt-2 text-[14px] text-mute max-w-[34ch] mx-auto leading-[1.55]">
-                  Te abrimos el email con todo precargado. Apretá enviar y te respondemos a la brevedad.
+                  Gracias por escribirnos. Recibimos tu consulta y te respondemos
+                  en menos de 24 horas hábiles.
                 </p>
                 <button
                   type="button"

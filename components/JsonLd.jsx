@@ -10,7 +10,7 @@ export default function JsonLd() {
       name: "Operon",
       url: SITE,
       logo: `${SITE}/icon.png`,
-      email: "hola@operonhub.com",
+      email: "admin@operonhub.com",
       description:
         "Automatizaciones, SaaS y software a medida para pymes. Construidos en Argentina, mantenibles por vos.",
       areaServed: "AR",
