@@ -1,4 +1,5 @@
 import "./globals.css";
+import CosmicDot from "@/components/CosmicDot";
 
 const SITE = "https://operonhub.com";
 
@@ -74,7 +75,10 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className="bg-paper text-ink antialiased">{children}</body>
+      <body className="bg-paper text-ink antialiased">
+        {children}
+        <CosmicDot />
+      </body>
     </html>
   );
 }
