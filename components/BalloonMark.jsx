@@ -8,7 +8,6 @@ export default function BalloonMark({
   stroke = 6,
   className = "",
   title,
-  accentAttrs = {}, // data-* extra forwarded to the accent dot (CosmicDot anchors)
 }) {
   const h = size * (78 / 56);
   return (
@@ -28,9 +27,7 @@ export default function BalloonMark({
       ) : (
         <circle cx="28" cy="24" r="21" fill="none" stroke={color} strokeWidth={stroke} />
       )}
-      {accent && !filled && (
-        <circle cx="28" cy="24" r={stroke * 0.95} fill={accent} {...accentAttrs} />
-      )}
+      {accent && !filled && <circle cx="28" cy="24" r={stroke * 0.95} fill={accent} />}
       {filled && accent && (
         <path
           d="M16 16 A 16 16 0 0 1 30 9"

@@ -177,13 +177,7 @@ function HeroArt() {
         className="absolute inset-0 flex items-center justify-center"
       >
         <div className="float">
-          <BalloonMark
-            size={220}
-            color="#14130F"
-            accent="#F2C94C"
-            stroke={5.6}
-            accentAttrs={{ "data-hero-dot": "true" }}
-          />
+          <BalloonMark size={220} color="#14130F" accent="#F2C94C" stroke={5.6} />
         </div>
       </motion.div>
 

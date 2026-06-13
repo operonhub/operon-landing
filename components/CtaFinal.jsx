@@ -107,13 +107,7 @@ export default function CtaFinal() {
             transition={{ duration: 0.9, ease: [0.2, 0.65, 0.3, 0.95] }}
             className="relative float"
           >
-            <BalloonMark
-              size={240}
-              color="#FBF9F4"
-              accent="#F2C94C"
-              stroke={5.6}
-              accentAttrs={{ "data-footer-logo": "true" }}
-            />
+            <BalloonMark size={240} color="#FBF9F4" accent="#F2C94C" stroke={5.6} />
           </motion.div>
         </div>
       </div>

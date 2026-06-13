@@ -78,36 +78,6 @@ a, button { transition: color .15s ease, background .15s ease, border-color .15s
 /* Hairline border helper */
 .hair { border-color: rgba(20,19,15,.08); }
 
-/* ── Cosmic Dot: el punto viaja DETRÁS del contenido ──────────────────────
-   main (todo el sitio) queda por encima del canvas y el punto (z-index 1). */
-main { position: relative; z-index: 10; }
-
-.cosmic-canvas {
-  position: fixed; inset: 0; z-index: 1; pointer-events: none;
-}
-.cosmic-path-svg {
-  position: fixed; top: 0; left: 0; z-index: 1;
-  visibility: hidden; pointer-events: none;
-}
-.cosmic-dot-wrap {
-  position: fixed; top: 0; left: 0; z-index: 1; pointer-events: none;
-  opacity: 0; will-change: transform;
-}
-.cosmic-dot-core {
-  width: 20px; height: 20px; border-radius: 9999px;
-  background: #EAB308;
-  /* sombra oscura (mordida sobre fondo claro) + glow amarillo */
-  filter: drop-shadow(0 0 6px rgba(0,0,0,0.25)) drop-shadow(0 0 12px #EAB308);
-  will-change: transform, opacity;
-}
-/* El efecto es puramente decorativo: se apaga en mobile y con reduced-motion. */
-@media (max-width: 767px) {
-  .cosmic-canvas, .cosmic-dot-wrap, .cosmic-path-svg { display: none !important; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cosmic-canvas, .cosmic-dot-wrap, .cosmic-path-svg { display: none !important; }
-}
-
 /* SVG dotted grid bg */
 .dot-grid {
   background-image: radial-gradient(rgba(20,19,15,.10) 1px, transparent 1px);
