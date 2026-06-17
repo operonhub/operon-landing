@@ -23,6 +23,16 @@ const projects = [
     metric: "Lighthouse 99/100",
   },
   {
+    live: true,
+    url: "https://mimascotacubierta.com/",
+    image: "/projects/mi-mascota-cubierta.png",
+    cat: "Contenido · SEO",
+    title: "Mi Mascota Cubierta",
+    desc: "Comparador de seguros para perros y gatos en México y Argentina. Precios actualizados, guías por raza, salud y urgencias. Arquitectura de contenido pensada para posicionar en Google y captar tráfico de alta intención.",
+    stack: ["Astro", "Vercel", "SEO"],
+    metric: "En producción",
+  },
+  {
     live: false,
     cat: "Automatización · Retail",
     title: "Flujo Onix",
