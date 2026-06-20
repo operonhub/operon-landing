@@ -42,22 +42,6 @@ const projects = [
     stack: ["Astro", "Vercel", "SEO"],
     metric: "En producción",
   },
-  {
-    live: false,
-    cat: "Automatización · Retail",
-    title: "Flujo Onix",
-    desc: "Sincronización bidireccional entre Tiendanube, MercadoLibre y un ERP local. Stock unificado, sin sobreventas, sin reconciliaciones manuales.",
-    stack: ["n8n", "Hono", "Drizzle", "Redis"],
-    metric: "Próximamente",
-  },
-  {
-    live: false,
-    cat: "Software · Logística",
-    title: "Cargo Atlas",
-    desc: "Plataforma de seguimiento de cargas en tiempo real para una operadora de transporte regional. Reemplazó 4 planillas y un grupo de WhatsApp.",
-    stack: ["Next.js", "Postgres", "Mapbox", "WhatsApp Cloud"],
-    metric: "Próximamente",
-  },
 ];
 
 export default function Projects() {
