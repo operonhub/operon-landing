@@ -4,6 +4,16 @@ import { motion } from "framer-motion";
 const projects = [
   {
     live: true,
+    url: "https://costito.vercel.app/",
+    image: "/projects/costito.png",
+    cat: "Herramienta · Comercio",
+    title: "Costito",
+    desc: "Calculadora de precios para comerciantes argentinos. Suma el IVA, la comisión de cada canal (Mercado Libre y otros) y los ingresos brutos, y te dice el precio justo para publicar y cuánto ganás limpio por unidad. Sin planillas ni cuentas a mano.",
+    stack: ["HTML5 · CSS3", "JS vanilla", "Vercel"],
+    metric: "En producción",
+  },
+  {
+    live: true,
     url: "https://nutri-studio.vercel.app/",
     image: "/projects/nutri-studio.png",
     cat: "SaaS · Salud",
