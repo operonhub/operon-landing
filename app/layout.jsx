@@ -62,6 +62,12 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
+  // Verificación de propiedad en Google Search Console (método etiqueta HTML).
+  // Verifica propiedades de tipo "Prefijo de URL". Para una propiedad de
+  // "Dominio" se necesita además el registro TXT en el DNS (Hostinger).
+  verification: {
+    google: "PifWdqxPMTq01YwkXwOf3UyjlNn9nxzkQr6ZsJVuJkE",
+  },
   // app/icon.png, app/apple-icon.png and app/favicon.ico are auto-detected
 };
 
