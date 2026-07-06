@@ -89,8 +89,6 @@ export default function Hero() {
             >
               <span>Argentina · 2026</span>
               <span className="w-4 h-px bg-line" />
-              <span>+18 procesos en producción</span>
-              <span className="w-4 h-px bg-line" />
               <span>0 vendor-lock</span>
             </motion.div>
           </div>
