@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import BalloonMark from "./BalloonMark";
+import TypewriterWord from "./TypewriterWord";
 
 export default function Hero() {
   return (
@@ -45,7 +46,7 @@ export default function Hero() {
               className="font-display font-semibold text-ink leading-[0.94] tracking-tightest"
               style={{ fontSize: "clamp(48px, 7.2vw, 104px)" }}
             >
-              Software que <em className="not-italic text-blue">flota</em>.<br />
+              Software que <em className="not-italic text-blue"><TypewriterWord text="flota" startDelay={600} /></em>.<br />
               <span className="italic font-medium text-mute">Procesos</span> que dejan de pesar.
             </motion.h1>
 
