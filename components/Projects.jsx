@@ -1,4 +1,5 @@
 "use client";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const projects = [
@@ -42,9 +43,85 @@ const projects = [
     stack: ["Astro", "Vercel", "SEO"],
     metric: "En producción",
   },
+  {
+    live: true,
+    url: "https://labalconadasma.com/",
+    image: "/projects/la-balconada.jpg",
+    cat: "Turismo · Alojamiento",
+    title: "La Balconada",
+    desc: "Complejo de alquiler turístico en San Martín de los Andes. Tres unidades — casa, tríplex y departamento — con galería, mapa de ubicación y reserva directa por WhatsApp, sin comisiones de plataformas.",
+    stack: ["HTML5 · CSS3", "JS vanilla", "Vercel"],
+    metric: "En producción",
+  },
+  {
+    live: true,
+    url: "https://schcardetail.com/",
+    image: "/projects/sch-cardetail.jpg",
+    cat: "Servicios · Automotor",
+    title: "SCH Car Detail",
+    desc: "Detailing de alta gama a domicilio en Nordelta y zona norte. Catálogo de servicios, packs por nivel de protección (cerámico y PPF), testimonios y contacto directo por WhatsApp.",
+    stack: ["HTML5 · CSS3", "GSAP", "Vercel"],
+    metric: "En producción",
+  },
 ];
 
+// Parte la lista en páginas del carrusel. La última página queda con las
+// cards que sobren — nunca se rellena con placeholders.
+function chunk(list, size) {
+  const out = [];
+  for (let i = 0; i < list.length; i += size) out.push(list.slice(i, i + size));
+  return out;
+}
+
 export default function Projects() {
+  const trackRef = useRef(null);
+  // Arranca en 4 igual que el render del server; en mobile baja a 1 después
+  // del mount, así no hay hydration mismatch (sólo un re-render).
+  const [perPage, setPerPage] = useState(4);
+  const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const apply = () => setPerPage(mq.matches ? 4 : 1);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
+  const pages = chunk(projects, perPage);
+
+  // Al cambiar la cantidad por página cambia la cantidad de páginas, así que
+  // la posición actual deja de ser válida.
+  useEffect(() => {
+    setPage(0);
+    trackRef.current?.scrollTo({ left: 0 });
+  }, [perPage]);
+
+  const goTo = useCallback(
+    (i) => {
+      const target = Math.max(0, Math.min(i, pages.length - 1));
+      // Se actualiza el indicador acá mismo en vez de esperar al evento de
+      // scroll: da feedback inmediato al click y no deja los controles
+      // desincronizados si la animación de scroll se interrumpe.
+      setPage(target);
+      const el = trackRef.current;
+      if (!el || !el.clientWidth) return;
+      el.scrollTo({ left: target * el.clientWidth, behavior: "smooth" });
+    },
+    [pages.length]
+  );
+
+  // El scroll nativo (swipe, trackpad, teclado) también mueve el carrusel,
+  // así que la página activa se deriva de la posición real del track.
+  const onScroll = () => {
+    const el = trackRef.current;
+    if (!el || !el.clientWidth) return;
+    setPage(Math.round(el.scrollLeft / el.clientWidth));
+  };
+
+  const atStart = page <= 0;
+  const atEnd = page >= pages.length - 1;
+
   return (
     <section id="proyectos" className="relative py-28 lg:py-36 border-t border-line/70 bg-cream/40">
       <div className="shell">
@@ -58,17 +135,68 @@ export default function Projects() {
               Cosas que ya están <em className="not-italic italic text-mute font-medium">en producción</em>.
             </h2>
           </div>
-          <p className="text-[15.5px] text-mute max-w-[46ch] leading-[1.55]">
-            Selección de proyectos. Hacé click para visitar los que están live —
-            o pedinos los casos completos que aún no podemos mostrar acá.
-          </p>
+          {/* flex-1 hace que, cuando el h2 fuerza el wrap, esta fila ocupe el
+              ancho completo y las flechas queden pegadas al borde derecho. */}
+          <div className="flex-1 min-w-[280px] flex items-end justify-between gap-8">
+            <p className="text-[15.5px] text-mute max-w-[46ch] leading-[1.55]">
+              Selección de proyectos. Hacé click para visitar los que están live —
+              o pedinos los casos completos que aún no podemos mostrar acá.
+            </p>
+            {pages.length > 1 && (
+              <div className="hidden lg:flex items-center gap-2.5 shrink-0">
+                <ArrowButton label="Proyectos anteriores" disabled={atStart} onClick={() => goTo(page - 1)}>
+                  ←
+                </ArrowButton>
+                <ArrowButton label="Proyectos siguientes" disabled={atEnd} onClick={() => goTo(page + 1)}>
+                  →
+                </ArrowButton>
+              </div>
+            )}
+          </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
-          {projects.map((p, i) => (
-            <ProjectCard key={p.title} {...p} index={i} />
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <div
+            ref={trackRef}
+            onScroll={onScroll}
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
+          >
+            {pages.map((group, i) => (
+              <div
+                key={i}
+                // content-start evita que una página incompleta estire sus
+                // cards para llenar el alto que fija la página más llena.
+                className="w-full shrink-0 snap-start grid gap-6 lg:gap-8 lg:grid-cols-2 content-start"
+              >
+                {group.map((p) => (
+                  <ProjectCard key={p.title} {...p} />
+                ))}
+              </div>
+            ))}
+          </div>
+
+          {pages.length > 1 && (
+            <div className="mt-10 flex items-center justify-center gap-2.5">
+              {pages.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => goTo(i)}
+                  aria-label={`Ir a la página ${i + 1} de ${pages.length}`}
+                  aria-current={i === page}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i === page ? "w-8 bg-ink" : "w-2 bg-sand hover:bg-soft"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
+        </motion.div>
 
         <div className="mt-14 flex items-center justify-between flex-wrap gap-4 border-t border-line pt-8">
           <div className="font-mono-up text-mute">¿Querés ver algo más cercano a tu rubro?</div>
@@ -85,72 +213,82 @@ export default function Projects() {
   );
 }
 
-function ProjectCard({ live, url, image, cat, title, desc, stack, metric, index }) {
+function ArrowButton({ label, disabled, onClick, children }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={label}
+      className="w-11 h-11 rounded-full border border-line flex items-center justify-center text-[17px] text-ink hover:border-ink hover:bg-paper disabled:opacity-30 disabled:pointer-events-none"
+    >
+      {children}
+    </button>
+  );
+}
+
+// Sin animación de entrada propia: dentro de un track con overflow-x las
+// cards de páginas no visibles arrancarían en opacity 0 y podrían quedar
+// invisibles. El fade-in lo hace el contenedor del carrusel, una sola vez.
+function ProjectCard({ live, url, image, cat, title, desc, stack, metric }) {
   const Wrapper = live ? "a" : "div";
   const wrapperProps = live
     ? { href: url, target: "_blank", rel: "noopener noreferrer" }
     : {};
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 22 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, delay: (index % 2) * 0.08 }}
+    <Wrapper
+      {...wrapperProps}
+      className={`group block relative bg-paper border border-line rounded-3xl overflow-hidden transition-colors ${
+        live ? "hover:border-ink/30 cursor-pointer" : "opacity-95"
+      }`}
     >
-      <Wrapper
-        {...wrapperProps}
-        className={`group block relative bg-paper border border-line rounded-3xl overflow-hidden transition-colors ${
-          live ? "hover:border-ink/30 cursor-pointer" : "opacity-95"
-        }`}
-      >
-        {/* Live preview / mockup */}
-        <div className="relative h-[280px] lg:h-[320px] bg-ink overflow-hidden">
-          {live ? (
-            <LivePreview url={url} title={title} image={image} />
-          ) : (
-            <FauxMockup title={title} />
+      {/* Live preview / mockup */}
+      <div className="relative h-[280px] lg:h-[320px] bg-ink overflow-hidden">
+        {live ? (
+          <LivePreview url={url} title={title} image={image} />
+        ) : (
+          <FauxMockup title={title} />
+        )}
+
+        <div className="absolute left-6 bottom-6 right-6 flex items-center justify-between z-10">
+          <span className="font-mono-up text-paper/70 bg-ink/60 backdrop-blur px-2.5 py-1 rounded-full">
+            {cat}
+          </span>
+          <span className={`font-mono-up ${live ? "text-sol" : "text-paper/50"} bg-ink/60 backdrop-blur px-2.5 py-1 rounded-full`}>
+            {live && <span className="inline-block w-1.5 h-1.5 rounded-full bg-sol mr-1.5 align-middle" />}
+            {metric}
+          </span>
+        </div>
+      </div>
+
+      <div className="p-8 lg:p-10">
+        <div className="flex items-start justify-between gap-4">
+          <h3 className="font-display font-semibold text-[28px] lg:text-[34px] leading-[1.05] tracking-tight">
+            {title}
+          </h3>
+          {live && (
+            <span className="mt-2 shrink-0 font-mono-up text-mute group-hover:text-blue transition-colors">
+              {new URL(url).hostname}
+            </span>
           )}
-
-          <div className="absolute left-6 bottom-6 right-6 flex items-center justify-between z-10">
-            <span className="font-mono-up text-paper/70 bg-ink/60 backdrop-blur px-2.5 py-1 rounded-full">
-              {cat}
-            </span>
-            <span className={`font-mono-up ${live ? "text-sol" : "text-paper/50"} bg-ink/60 backdrop-blur px-2.5 py-1 rounded-full`}>
-              {live && <span className="inline-block w-1.5 h-1.5 rounded-full bg-sol mr-1.5 align-middle" />}
-              {metric}
-            </span>
-          </div>
         </div>
-
-        <div className="p-8 lg:p-10">
-          <div className="flex items-start justify-between gap-4">
-            <h3 className="font-display font-semibold text-[28px] lg:text-[34px] leading-[1.05] tracking-tight">
-              {title}
-            </h3>
-            {live && (
-              <span className="mt-2 shrink-0 font-mono-up text-mute group-hover:text-blue transition-colors">
-                {new URL(url).hostname}
-              </span>
-            )}
-          </div>
-          <p className="mt-4 text-[15.5px] leading-[1.6] text-mute max-w-[54ch]">{desc}</p>
-          <div className="mt-7 flex items-center justify-between flex-wrap gap-4">
-            <ul className="flex flex-wrap gap-2">
-              {stack.map((s) => (
-                <li key={s} className="font-mono-up text-ink/80 border border-line rounded-full px-3 py-1.5 bg-cream/60">
-                  {s}
-                </li>
-              ))}
-            </ul>
-            <span className="inline-flex items-center gap-1.5 font-display font-semibold text-ink group-hover:text-blue">
-              {live ? "Visitar sitio" : "Próximamente"}
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </span>
-          </div>
+        <p className="mt-4 text-[15.5px] leading-[1.6] text-mute max-w-[54ch]">{desc}</p>
+        <div className="mt-7 flex items-center justify-between flex-wrap gap-4">
+          <ul className="flex flex-wrap gap-2">
+            {stack.map((s) => (
+              <li key={s} className="font-mono-up text-ink/80 border border-line rounded-full px-3 py-1.5 bg-cream/60">
+                {s}
+              </li>
+            ))}
+          </ul>
+          <span className="inline-flex items-center gap-1.5 font-display font-semibold text-ink group-hover:text-blue">
+            {live ? "Visitar sitio" : "Próximamente"}
+            <span className="transition-transform group-hover:translate-x-1">→</span>
+          </span>
         </div>
-      </Wrapper>
-    </motion.div>
+      </div>
+    </Wrapper>
   );
 }
 
