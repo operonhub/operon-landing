@@ -75,6 +75,13 @@ export default function Hero() {
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </button>
               <a
+                href="/contanos-tu-proceso"
+                className="group inline-flex items-center gap-2 border border-blue text-blue font-display font-semibold text-[14.5px] px-5 py-3.5 rounded-xl hover:bg-blue hover:text-paper"
+              >
+                Contanos tu proceso
+                <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
+              </a>
+              <a
                 href="#proyectos"
                 className="inline-flex items-center gap-2 border border-ink/90 text-ink font-display font-semibold text-[14.5px] px-5 py-3.5 rounded-xl hover:bg-ink hover:text-paper"
               >
