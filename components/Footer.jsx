@@ -15,6 +15,7 @@ const columns = [
   {
     heading: "Recursos",
     links: [
+      { label: "Operon Reservas",   href: "/reservas" },
       { label: "Casos completos",   href: "/#proyectos" },
       { label: "Stack tecnológico", href: "/#servicios" },
       { label: "Política de datos", href: "/privacidad" },

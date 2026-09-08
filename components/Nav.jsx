@@ -11,6 +11,12 @@ export default function Nav() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-7 text-[13.5px] font-medium">
+          {/* Producto propio: va primero y con el punto sol para que se lea
+              como "esto es una cosa aparte", no como una sección más. */}
+          <Link href="/reservas" className="flex items-center gap-2 hover:text-blue">
+            <span className="w-1.5 h-1.5 rounded-full bg-sol" aria-hidden />
+            Reservas
+          </Link>
           <a href="#servicios" className="hover:text-blue">Servicios</a>
           <a href="#proyectos" className="hover:text-blue">Proyectos</a>
           <a href="#proceso" className="hover:text-blue">Proceso</a>
