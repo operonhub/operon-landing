@@ -241,7 +241,20 @@ function ArrowButton({ label, disabled, onClick, children }) {
 // que viven en este mismo dominio (ruta relativa). `new URL()` explota con una
 // ruta relativa, así que el host visible se resuelve acá.
 const esExterno = (url) => /^https?:\/\//.test(url);
-const hostVisible = (url) => (esExterno(url) ? new URL(url).hostname : `operonhub.com${url}`);
+
+/**
+ * Host que se muestra al lado del título y en el marco del navegador.
+ *
+ * Devuelve `null` para los subdominios de la plataforma de hosting: un
+ * "costito.vercel.app" a la vista lee como proyecto de prueba y le resta
+ * autoridad a la card. El dominio propio, en cambio, es una credencial y se
+ * muestra. Cuando cualquiera de estos proyectos estrene dominio, aparece solo.
+ */
+const hostVisible = (url) => {
+  if (!esExterno(url)) return `operonhub.com${url}`;
+  const host = new URL(url).hostname;
+  return /\.(vercel\.app|netlify\.app|pages\.dev|github\.io)$/.test(host) ? null : host;
+};
 
 // Sin animación de entrada propia: dentro de un track con overflow-x las
 // cards de páginas no visibles arrancarían en opacity 0 y podrían quedar
@@ -288,7 +301,7 @@ function ProjectCard({ live, url, image, cat, title, desc, stack, metric }) {
           <h3 className="font-display font-semibold text-[28px] lg:text-[34px] leading-[1.05] tracking-tight">
             {title}
           </h3>
-          {live && (
+          {live && hostVisible(url) && (
             <span className="mt-2 shrink-0 font-mono-up text-mute group-hover:text-blue transition-colors">
               {hostVisible(url)}
             </span>
@@ -322,9 +335,11 @@ function LivePreview({ url, title, image }) {
           <span className="w-2 h-2 rounded-full bg-paper/25" />
           <span className="w-2 h-2 rounded-full bg-paper/25" />
           <span className="w-2 h-2 rounded-full bg-paper/25" />
-          <span className="ml-3 font-mono-up text-paper/50 text-[10px] truncate">
-            {hostVisible(url)}
-          </span>
+          {hostVisible(url) && (
+            <span className="ml-3 font-mono-up text-paper/50 text-[10px] truncate">
+              {hostVisible(url)}
+            </span>
+          )}
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

@@ -34,7 +34,7 @@ export default function Hero() {
           className="flex items-center gap-3 mb-9"
         >
           <span className="w-2 h-2 rounded-full bg-blue pulse-dot" />
-          <span className="font-mono-up text-mute">v1.0 · disponible para nuevos proyectos · BUE / AR</span>
+          <span className="font-mono-up text-mute">v2.0 · disponible para nuevos proyectos · BUE / AR</span>
         </motion.div>
 
         <div className="grid lg:grid-cols-[1.15fr_1fr] gap-16 lg:gap-20 items-center">
