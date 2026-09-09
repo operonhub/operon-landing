@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 const SITE = "https://operonhub.com";
 
 export const metadata = {
-  title: "Política de datos · Operon",
+  title: "Política de datos",
   description:
     "Cómo recopilamos, usamos y protegemos la información que nos compartís cuando nos contactás.",
   alternates: { canonical: `${SITE}/privacidad` },

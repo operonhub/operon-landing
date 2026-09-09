@@ -5,6 +5,16 @@ import { motion } from "framer-motion";
 const projects = [
   {
     live: true,
+    url: "/reservas",
+    image: "/projects/operon-reservas.png",
+    cat: "Producto propio · Turismo",
+    title: "Operon Reservas",
+    desc: "Motor de reservas multi-alojamiento para cabañas y hospedajes chicos. Calendario por unidad, tarifas por noche, cobro de seña con Mercado Pago y confirmaciones automáticas — abajo de la web del propietario, sin comisión por reserva.",
+    stack: ["Next.js", "Supabase", "Mercado Pago", "TypeScript"],
+    metric: "Demo abierta",
+  },
+  {
+    live: true,
     url: "https://costito.vercel.app/",
     image: "/projects/costito.png",
     cat: "Herramienta · Comercio",
@@ -227,13 +237,24 @@ function ArrowButton({ label, disabled, onClick, children }) {
   );
 }
 
+// El carrusel mezcla sitios de clientes (URL absoluta) con productos propios
+// que viven en este mismo dominio (ruta relativa). `new URL()` explota con una
+// ruta relativa, así que el host visible se resuelve acá.
+const esExterno = (url) => /^https?:\/\//.test(url);
+const hostVisible = (url) => (esExterno(url) ? new URL(url).hostname : `operonhub.com${url}`);
+
 // Sin animación de entrada propia: dentro de un track con overflow-x las
 // cards de páginas no visibles arrancarían en opacity 0 y podrían quedar
 // invisibles. El fade-in lo hace el contenedor del carrusel, una sola vez.
 function ProjectCard({ live, url, image, cat, title, desc, stack, metric }) {
   const Wrapper = live ? "a" : "div";
   const wrapperProps = live
-    ? { href: url, target: "_blank", rel: "noopener noreferrer" }
+    ? {
+        href: url,
+        // Un producto propio no debería abrirse en una pestaña nueva: el
+        // visitante sigue dentro del mismo sitio.
+        ...(esExterno(url) ? { target: "_blank", rel: "noopener noreferrer" } : {}),
+      }
     : {};
 
   return (
@@ -269,7 +290,7 @@ function ProjectCard({ live, url, image, cat, title, desc, stack, metric }) {
           </h3>
           {live && (
             <span className="mt-2 shrink-0 font-mono-up text-mute group-hover:text-blue transition-colors">
-              {new URL(url).hostname}
+              {hostVisible(url)}
             </span>
           )}
         </div>
@@ -283,7 +304,7 @@ function ProjectCard({ live, url, image, cat, title, desc, stack, metric }) {
             ))}
           </ul>
           <span className="inline-flex items-center gap-1.5 font-display font-semibold text-ink group-hover:text-blue">
-            {live ? "Visitar sitio" : "Próximamente"}
+            {live ? (esExterno(url) ? "Visitar sitio" : "Ver el producto") : "Próximamente"}
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </span>
         </div>
@@ -302,7 +323,7 @@ function LivePreview({ url, title, image }) {
           <span className="w-2 h-2 rounded-full bg-paper/25" />
           <span className="w-2 h-2 rounded-full bg-paper/25" />
           <span className="ml-3 font-mono-up text-paper/50 text-[10px] truncate">
-            {new URL(url).hostname}
+            {hostVisible(url)}
           </span>
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
