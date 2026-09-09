@@ -138,3 +138,37 @@ a, button { transition: color .15s ease, background .15s ease, border-color .15s
     animation: none !important;
   }
 }
+
+/* ── Formulario de leads (/contanos-tu-proceso) ─────────────────────────────
+   Definido acá (después de @tailwind utilities) para ganarle al preflight de
+   Tailwind en el borde, y mantener el color de línea de la identidad. */
+.lead-input {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.lead-input::placeholder { color: var(--soft); }
+.lead-input:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(31,64,194,.18);
+}
+.lead-input[aria-invalid="true"] { border-color: #cf6a5c; }
+.lead-checkbox {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  flex: none;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+.lead-checkbox:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
