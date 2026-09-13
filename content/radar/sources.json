@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "lastReviewedAt": "2026-09-13",
+  "description": "Lista inicial para investigar Radar Operon. Es un punto de partida, no una autorización para convertir una actualización en artículo. Para cada pieza, usar la fuente primaria más específica disponible y sumar una segunda fuente independiente cuando corresponda.",
+  "selectionPolicy": {
+    "priority": [
+      "fuentes primarias del hecho o producto",
+      "organismos regulatorios y entidades públicas",
+      "fuentes institucionales de Argentina y Latinoamérica"
+    ],
+    "avoid": [
+      "agregadores sin enlace a la fuente original",
+      "titulares reescritos sin análisis operativo",
+      "publicaciones de agencias competidoras directas como tema principal"
+    ]
+  },
+  "sources": [
+    {
+      "id": "openai-news",
+      "name": "OpenAI News",
+      "url": "https://openai.com/news/",
+      "kind": "provider",
+      "region": "Global",
+      "categories": ["IA aplicada", "Datos y regulación"],
+      "useFor": "Anuncios primarios de producto, seguridad, investigación y políticas."
+    },
+    {
+      "id": "anthropic-news",
+      "name": "Anthropic News",
+      "url": "https://www.anthropic.com/news",
+      "kind": "provider",
+      "region": "Global",
+      "categories": ["IA aplicada", "Datos y regulación"],
+      "useFor": "Anuncios primarios de producto, investigación y seguridad de modelos."
+    },
+    {
+      "id": "google-workspace-updates",
+      "name": "Google Workspace Updates",
+      "url": "https://workspaceupdates.googleblog.com/",
+      "kind": "provider",
+      "region": "Global",
+      "categories": ["Automatización", "Ventas y CRM", "E-commerce"],
+      "useFor": "Cambios oficiales que puedan afectar flujos de trabajo de empresas."
+    },
+    {
+      "id": "microsoft-365-blog",
+      "name": "Microsoft 365 Blog",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/",
+      "kind": "provider",
+      "region": "Global",
+      "categories": ["Automatización", "Ventas y CRM", "IA aplicada"],
+      "useFor": "Cambios oficiales de producto y operación para entornos de trabajo."
+    },
+    {
+      "id": "aws-machine-learning-blog",
+      "name": "AWS Machine Learning Blog",
+      "url": "https://aws.amazon.com/blogs/machine-learning/",
+      "kind": "provider",
+      "region": "Global",
+      "categories": ["IA aplicada", "Datos y regulación"],
+      "useFor": "Patrones técnicos y anuncios oficiales con documentación de implementación."
+    },
+    {
+      "id": "aaip-argentina",
+      "name": "Agencia de Acceso a la Información Pública (Argentina)",
+      "url": "https://www.argentina.gob.ar/aaip",
+      "kind": "regulator",
+      "region": "Argentina",
+      "categories": ["Datos y regulación", "Argentina y LatAm"],
+      "useFor": "Protección de datos, acceso a información y normativa argentina."
+    },
+    {
+      "id": "anpd-brasil",
+      "name": "Agência Nacional de Proteção de Dados (Brasil)",
+      "url": "https://www.gov.br/anpd/pt-br",
+      "kind": "regulator",
+      "region": "LatAm",
+      "categories": ["Datos y regulación", "Argentina y LatAm"],
+      "useFor": "Regulación y protección de datos en Brasil con relevancia regional."
+    },
+    {
+      "id": "cepal-digital",
+      "name": "CEPAL — Tecnologías digitales para el desarrollo",
+      "url": "https://www.cepal.org/es/temas/tecnologias-digitales-para-desarrollo",
+      "kind": "public-institution",
+      "region": "LatAm",
+      "categories": ["Argentina y LatAm", "Datos y regulación"],
+      "useFor": "Contexto regional y documentos institucionales; no reemplaza la fuente primaria de un hecho."
+    }
+  ]
+}

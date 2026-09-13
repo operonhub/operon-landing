@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "validate:radar": "node scripts/validate-radar.mjs --strict",
+    "validate:radar:pr": "node scripts/validate-radar.mjs --strict --verify-urls",
+    "validate:radar:publish": "node scripts/validate-radar.mjs --strict --verify-urls --auto-publish"
   },
   "dependencies": {
     "fontkit": "^2.0.4",
