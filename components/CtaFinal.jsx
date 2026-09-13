@@ -77,7 +77,7 @@ export default function CtaFinal() {
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl border-t border-paper/10 pt-8">
             {[
               { k: "Tiempo de respuesta", v: "< 24h" },
-              { k: "Primer demo", v: "7 días" },
+              { k: "Primer demo", v: "1–2 semanas" },
               { k: "Stack", v: "Tuyo · open" },
               { k: "Soporte", v: "Humano" },
             ].map((s) => (

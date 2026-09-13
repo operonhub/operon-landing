@@ -7,7 +7,7 @@ export const faqs = [
   },
   {
     q: "¿Cuánto tarda en estar listo?",
-    a: "Trabajamos en sprints de una a dos semanas con una demo en vivo cada viernes. El primer demo funcional lo ves a los 7 días de arrancar. Una landing o automatización simple puede estar en producción en dos o tres semanas; un producto SaaS completo lleva entre uno y tres meses según features. Vos siempre sabés en qué semana estamos y qué viene después.",
+    a: "Trabajamos en sprints de una a dos semanas con una demo en vivo cada viernes. El primer demo funcional lo ves entre la primera y la segunda semana. Una landing o automatización simple puede estar en producción en dos o tres semanas; un producto SaaS completo lleva entre uno y tres meses según features. Vos siempre sabés en qué semana estamos y qué viene después.",
   },
   {
     q: "¿El código y la infraestructura quedan míos?",
