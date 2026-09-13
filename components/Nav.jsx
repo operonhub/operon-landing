@@ -17,11 +17,11 @@ export default function Nav() {
             <span className="w-1.5 h-1.5 rounded-full bg-sol" aria-hidden />
             Reservas
           </Link>
-          <a href="#servicios" className="hover:text-blue">Servicios</a>
-          <a href="#proyectos" className="hover:text-blue">Proyectos</a>
-          <a href="#proceso" className="hover:text-blue">Proceso</a>
-          <a href="#diferencial" className="hover:text-blue">Por qué Operon</a>
-          <a href="#faq" className="hover:text-blue">FAQ</a>
+          <a href="/#servicios" className="hover:text-blue">Servicios</a>
+          <a href="/#proyectos" className="hover:text-blue">Proyectos</a>
+          <a href="/#proceso" className="hover:text-blue">Proceso</a>
+          <a href="/#diferencial" className="hover:text-blue">Por qué Operon</a>
+          <a href="/#faq" className="hover:text-blue">FAQ</a>
         </nav>
 
         <div className="flex items-center gap-2">

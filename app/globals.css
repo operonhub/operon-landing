@@ -172,3 +172,71 @@ a, button { transition: color .15s ease, background .15s ease, border-color .15s
   outline: 2px solid var(--blue);
   outline-offset: 2px;
 }
+
+/* Radar Operon: lectura larga sin sumar un plugin de tipografía. */
+.radar-body {
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.78;
+}
+.radar-body > * + * { margin-top: 1.45em; }
+.radar-body h2,
+.radar-body h3 {
+  scroll-margin-top: 96px;
+  font-family: 'Space Grotesk', 'Geist', sans-serif;
+  font-weight: 600;
+  letter-spacing: -.025em;
+  line-height: 1.12;
+}
+.radar-body h2 { margin-top: 2.2em; font-size: clamp(27px, 4vw, 36px); }
+.radar-body h3 { margin-top: 1.8em; font-size: clamp(22px, 3vw, 28px); }
+.radar-body strong { font-weight: 600; }
+.radar-body a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.radar-body a:hover { color: var(--blue-deep); }
+.radar-body ul,
+.radar-body ol { padding-left: 1.35em; }
+.radar-body ul { list-style: disc; }
+.radar-body ol { list-style: decimal; }
+.radar-body li + li { margin-top: .55em; }
+.radar-body blockquote {
+  border-left: 2px solid var(--blue);
+  color: var(--mute);
+  font-family: 'Space Grotesk', 'Geist', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.55;
+  padding-left: 1.25em;
+}
+.radar-body code {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--cream);
+  padding: .08em .35em;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: .82em;
+}
+.radar-take {
+  margin: 2.5em 0;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--blue);
+  border-radius: 16px;
+  background: var(--cream);
+  padding: clamp(24px, 5vw, 38px);
+}
+.radar-take > * + * { margin-top: 1em; }
+.radar-take-label {
+  color: var(--blue);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+:where(a, button):focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
