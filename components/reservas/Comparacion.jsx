@@ -1,11 +1,14 @@
 "use client";
-import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { animate, motion, useInView } from "framer-motion";
 import { COMISION_OTA, comparacion } from "./datos";
 
 const MIN = 300000;
 const MAX = 12000000;
 const PASO = 100000;
+// Valor donde queda el slider al terminar el barrido de entrada: el mismo
+// que antes era el valor inicial fijo, para no cambiar el resto de la cuenta.
+const VALOR_DEMO = 2000000;
 
 const pesos = new Intl.NumberFormat("es-AR", {
   style: "currency",
@@ -33,7 +36,41 @@ const tonos = {
 };
 
 export default function Comparacion() {
-  const [mensual, setMensual] = useState(2000000);
+  const [mensual, setMensual] = useState(MIN);
+  const calculadoraRef = useRef(null);
+  const animacionRef = useRef(null);
+  // `amount: 0.4` para que arranque cuando la calculadora ya está bien
+  // visible, no apenas asoma el borde de la tarjeta.
+  const enVista = useInView(calculadoraRef, { once: true, amount: 0.4 });
+
+  useEffect(() => {
+    if (!enVista) return;
+
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+      setMensual(VALOR_DEMO);
+      return;
+    }
+
+    // Barrido de entrada: el slider se mueve solo hasta $2.000.000 para que
+    // se note, desde el primer vistazo, que es interactivo — no es un
+    // gráfico fijo. No interrumpe el scroll: arranca ya visible y el
+    // visitante puede seguir bajando mientras corre.
+    animacionRef.current = animate(MIN, VALOR_DEMO, {
+      duration: 1.6,
+      delay: 0.3,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (v) => setMensual(Math.round(v / PASO) * PASO),
+    });
+
+    return () => animacionRef.current?.stop();
+  }, [enVista]);
+
+  const manejarCambioSlider = (e) => {
+    // Si el visitante toca el control mientras corre la animación de
+    // entrada, la cancelamos: a partir de ahí manda su propio arrastre.
+    animacionRef.current?.stop();
+    setMensual(Number(e.target.value));
+  };
 
   const { comisionMes, comisionAnio } = useMemo(
     () => ({
@@ -57,14 +94,17 @@ export default function Comparacion() {
             <span className="font-medium italic text-mute">Y se lleva el 15%.</span>
           </h2>
           <p className="mt-6 text-[16px] leading-[1.6] text-mute">
-            No te decimos que las dejes: las OTA sirven para que te encuentre el que no te conoce. El
-            punto es el otro — el que ya se fue contento y vuelve el año que viene no tendría que
-            costarte comisión.
+            No te decimos que las dejes: las OTA (plataformas como Booking o Airbnb) sirven para que
+            te encuentre el que no te conoce. El punto es el otro — el que ya se fue contento y vuelve
+            el año que viene no tendría que costarte comisión.
           </p>
         </header>
 
         {/* Calculadora */}
-        <div className="mt-14 grid gap-10 rounded-2xl border border-line bg-cream/50 p-6 sm:p-9 lg:mt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+        <div
+          ref={calculadoraRef}
+          className="mt-14 grid gap-10 rounded-2xl border border-line bg-cream/50 p-6 sm:p-9 lg:mt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-14"
+        >
           <div>
             <label
               htmlFor="facturacion-ota"
@@ -84,7 +124,7 @@ export default function Comparacion() {
               max={MAX}
               step={PASO}
               value={mensual}
-              onChange={(e) => setMensual(Number(e.target.value))}
+              onChange={manejarCambioSlider}
               className="deslizador mt-7 w-full"
               aria-describedby="facturacion-ayuda"
             />

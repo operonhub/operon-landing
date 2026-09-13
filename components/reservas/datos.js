@@ -66,12 +66,12 @@ export const funciones = [
     alt: "Pantalla de tarifas con el precio base por noche de cada unidad y el simulador de estadía",
   },
   {
-    id: "cobros",
-    etiqueta: "Cobros y avisos",
-    titulo: "La seña se cobra sola. Los mails también salen solos",
+    id: "configuracion",
+    etiqueta: "Configuración",
+    titulo: "Los datos del alojamiento, la seña y los avisos, en un solo lugar",
     texto:
-      "Conectás tu cuenta de Mercado Pago y definís qué porcentaje pedís de anticipo. Cada cambio de estado dispara un mail: al huésped y a vos. Nada depende de que te acuerdes.",
-    puntos: ["Mercado Pago por OAuth", "% de seña configurable", "Mails automáticos con reintentos"],
+      "Nombre, contacto y horarios de tu alojamiento; moneda y porcentaje de seña. Desde acá conectás tu cuenta de Mercado Pago para que la seña se cobre sola, y cada cambio de estado dispara un mail: al huésped y a vos.",
+    puntos: ["Datos y horarios del alojamiento", "% de seña y moneda", "Mercado Pago conectado"],
     imagen: "/reservas/panel-configuracion.webp",
     alt: "Configuración del alojamiento con datos de contacto, horarios, moneda y porcentaje de seña",
   },
