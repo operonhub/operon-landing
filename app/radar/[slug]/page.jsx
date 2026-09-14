@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -122,7 +123,23 @@ export default function RadarArticlePage({ params }) {
                 </div>
               </div>
             </div>
-            <div className="shell pb-10 lg:pb-16"><RadarSignal variant={1} framed /></div>
+            <div className="shell pb-10 lg:pb-16">
+              {article.seo.image ? (
+                <div className="overflow-hidden rounded-2xl border border-line bg-cream">
+                  <Image
+                    src={article.seo.image}
+                    alt={`Portada del artículo: ${article.title}`}
+                    width={1536}
+                    height={1024}
+                    priority
+                    sizes="(max-width: 768px) 100vw, 1200px"
+                    className="block h-auto w-full"
+                  />
+                </div>
+              ) : (
+                <RadarSignal variant={1} framed />
+              )}
+            </div>
           </header>
 
           <div className="shell grid gap-12 py-14 lg:grid-cols-[minmax(0,720px)_220px] lg:justify-center lg:gap-20 lg:py-20">
