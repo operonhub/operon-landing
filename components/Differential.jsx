@@ -43,15 +43,14 @@ export default function Differential() {
               className="font-display font-semibold leading-[0.98] tracking-tightest"
               style={{ fontSize: "clamp(36px, 5vw, 72px)" }}
             >
-              No somos una agencia.
+              Cero vendor-lock.
               <br />
-              <span className="font-medium italic text-mute">Tampoco un freelancer.</span>
+              <span className="font-medium italic text-mute">El resto, te lo mostramos.</span>
             </h2>
           </div>
           <p className="max-w-[54ch] text-[17px] leading-[1.55] text-mute lg:pt-3">
-            Somos un equipo chico de producto que trabaja con pymes. Lo que más se teme al contratar
-            software es quedar atado a un proveedor, pagar de más y no saber en qué está el proyecto.
-            Así lo resolvemos:
+            Lo que más se teme al contratar software es quedar atado a un proveedor, pagar de más y no
+            saber en qué está el proyecto. Estas son las cuatro reglas que lo evitan:
           </p>
         </div>
 
