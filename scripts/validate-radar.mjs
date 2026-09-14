@@ -18,11 +18,7 @@ const validCategories = new Set([
   "Argentina y LatAm",
   "Datos y regulación",
 ]);
-const initialEditorialSlugs = new Set([
-  "como-detectar-procesos-para-automatizar",
-  "crm-automatizacion-o-agente-ia",
-  "controles-para-agentes-de-ia",
-]);
+const initialEditorialSlugs = new Set();
 
 const args = process.argv.slice(2);
 const strict = args.includes("--strict");
