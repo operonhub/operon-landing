@@ -13,7 +13,6 @@ const diferenciales = [
     k: "02",
     t: "Stack estándar: cualquier dev lo continúa.",
     d: "Next.js, Node, Postgres y Supabase: herramientas que conoce cualquier desarrollador competente. Si mañana seguís con otro equipo, no arranca de cero.",
-    nota: "Es el mismo stack de Nutri Studio y Operon Reservas.",
     Escena: EscenaStack,
   },
   {
@@ -68,7 +67,7 @@ export default function Differential() {
   );
 }
 
-function Fila({ k, t, d, nota, Escena }) {
+function Fila({ k, t, d, Escena }) {
   const escenaRef = useRef(null);
   // Se observa la escena y no la fila: en mobile la fila entera puede ser más
   // alta que la pantalla y nunca verse en la proporción pedida.
@@ -85,13 +84,6 @@ function Fila({ k, t, d, nota, Escena }) {
           {t}
         </h3>
         <p className="mt-4 max-w-[46ch] text-[15.5px] leading-[1.6] text-mute">{d}</p>
-        {nota && (
-          // El punto sol es el mismo que marca los productos propios en el Nav.
-          <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3.5 py-1.5 text-[13px] text-ink/80">
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-sol" aria-hidden />
-            {nota}
-          </p>
-        )}
       </div>
 
       <div ref={escenaRef} className="w-full lg:max-w-[600px] lg:justify-self-end">
