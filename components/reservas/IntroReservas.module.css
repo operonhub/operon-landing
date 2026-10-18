@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "Operon Intro Display";
+  src: url("/brand/reservas-intro/space-grotesk.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Operon Intro Mono";
+  src: url("/brand/reservas-intro/jetbrains-mono.woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: hidden;
+  background: #1f40c2;
+  color: #fbf9f4;
+  animation: reveal-page .33s 2.67s cubic-bezier(.65, 0, .35, 1) both;
+}
+
+/* Mismo lienzo y proporciones de la versión desktop aprobada. */
+.artwork {
+  position: absolute;
+  width: min(100vw, 177.7778vh);
+  aspect-ratio: 16 / 9;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.canvas { width: 100%; height: 100%; overflow: visible; }
+.shift, .flight, .yolk, .echoOne, .echoTwo {
+  transform-box: view-box;
+  transform-origin: 0 0;
+}
+.shift { animation: make-room .64s 1.3s cubic-bezier(.76, 0, .24, 1) both; }
+.flight {
+  animation: ascend 1.22s .08s cubic-bezier(.165, .84, .44, 1) both,
+    appear .28s .08s ease-out both;
+}
+.cord { transform-origin: 0 87px; animation: cord-drag 1.24s .1s ease-in-out both; }
+.yolk { animation: pulse .34s .68s both; }
+.echoOne, .echoTwo { animation: echo .65s .8s ease-out both; }
+.echoTwo { animation-delay: .88s; }
+
+.word {
+  position: absolute;
+  left: 38.59375%;
+  top: 42.314815%;
+  font-family: "Operon Intro Display", "Space Grotesk", sans-serif;
+  font-size: min(7.395833vw, 13.148148vh);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-bottom: .07em;
+  margin-bottom: -.07em;
+}
+.letters { display: inline-block; animation: word-in .34s 1.6s cubic-bezier(.165, .84, .44, 1) both; }
+.descriptor {
+  position: absolute;
+  left: 59.635417%;
+  top: 55.740741%;
+  font-family: "Operon Intro Mono", monospace;
+  font-size: min(1.5625vw, 2.777778vh);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .18em;
+  white-space: nowrap;
+  animation: descriptor-in .28s 2s ease-out both;
+}
+
+.controls {
+  position: absolute;
+  right: 36px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.skip, .sound {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  border: 1px solid rgba(251, 249, 244, .24);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: 500 13px/1 "Operon Intro Display", sans-serif;
+  cursor: pointer;
+}
+.skip { padding: 0 16px; }
+.sound { width: 44px; }
+.skip:hover, .sound:hover { background: rgba(251, 249, 244, .09); }
+.skip:focus-visible, .sound:focus-visible { outline: 2px solid #f2c94c; outline-offset: 4px; }
+
+@keyframes ascend {
+  from { transform: translate(36px, 205px) scale(.86) rotate(-4deg); }
+  to { transform: translate(0, 0) scale(1) rotate(0); }
+}
+@keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+@keyframes make-room { from { transform: translateX(0); } to { transform: translateX(-285px); } }
+@keyframes cord-drag {
+  0% { transform: rotate(9deg); }
+  61.3% { transform: rotate(-3deg); }
+  100% { transform: rotate(0); }
+}
+@keyframes pulse {
+  0% { opacity: 0; transform: scale(0); }
+  76% { opacity: 1; transform: scale(1.06); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes echo {
+  from { opacity: .22; transform: scale(.16); }
+  to { opacity: 0; transform: scale(2); }
+}
+@keyframes word-in {
+  from { opacity: 0; transform: translateY(115%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes descriptor-in {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes reveal-page { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
+
+@media (max-width: 1023px), (prefers-reduced-motion: reduce) {
+  .intro { display: none; animation: none; }
+}

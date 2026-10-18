@@ -10,6 +10,7 @@ import CtaFinalReservas from "@/components/reservas/CtaFinalReservas";
 import FooterReservas from "@/components/reservas/FooterReservas";
 import JsonLdReservas from "@/components/reservas/JsonLdReservas";
 import ContactModal from "@/components/ContactModal";
+import IntroReservas from "@/components/reservas/IntroReservas";
 
 const SUBDOMINIO = "https://reservas.operonhub.com";
 
@@ -51,21 +52,24 @@ export const metadata = {
 
 export default function PaginaReservas() {
   return (
-    <main className="relative">
-      <JsonLdReservas />
-      <NavReservas />
-      <HeroReservas />
-      <Funciones />
-      <SinSobreventa />
-      <Comparacion />
-      <Conexion />
-      <EnElCelular />
-      <PreguntasReservas />
-      <CtaFinalReservas />
-      <FooterReservas />
-      {/* El mismo modal de contacto del sitio principal: los botones
-          `data-open-contact` de esta página lo abren sin configuración extra. */}
-      <ContactModal />
-    </main>
+    <>
+      <IntroReservas />
+      <main id="reservas-contenido" tabIndex={-1} className="relative">
+        <JsonLdReservas />
+        <NavReservas />
+        <HeroReservas />
+        <Funciones />
+        <SinSobreventa />
+        <Comparacion />
+        <Conexion />
+        <EnElCelular />
+        <PreguntasReservas />
+        <CtaFinalReservas />
+        <FooterReservas />
+        {/* El mismo modal de contacto del sitio principal: los botones
+            `data-open-contact` de esta página lo abren sin configuración extra. */}
+        <ContactModal />
+      </main>
+    </>
   );
 }
