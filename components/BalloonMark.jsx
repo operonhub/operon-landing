@@ -3,7 +3,7 @@
 export default function BalloonMark({
   size = 56,
   color = "currentColor",
-  accent = null,
+  accent = "#F2C94C",
   filled = false,
   stroke = 6,
   className = "",
@@ -49,7 +49,8 @@ export default function BalloonMark({
   );
 }
 
-export function Wordmark({ fontSize = 22, color = "currentColor", accent = null, filled = false }) {
+// La yema es parte del logo; accent={null} queda disponible para usos monocromos explícitos.
+export function Wordmark({ fontSize = 22, color = "currentColor", accent = "#F2C94C", filled = false }) {
   const bSize = fontSize * 1.18;
   return (
     <span
