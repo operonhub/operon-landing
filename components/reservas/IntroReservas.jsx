@@ -1,14 +1,17 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import styles from "./IntroReservas.module.css";
 
 const SESSION_KEY = "operon-reservas:intro-despegue-v4";
 const AUDIO_URL = "/brand/reservas-intro/despegue.mp3";
+// En la respuesta HTML, ocultar la cobertura antes de pintar si ya se vio.
+// En navegaciones del router, useLayoutEffect resuelve esta decisión antes del paint.
+const BEFORE_PAINT_SCRIPT = `(function(){try{if(sessionStorage.getItem(${JSON.stringify(SESSION_KEY)})||location.hash){document.currentScript.previousElementSibling.hidden=true;}}catch(e){}})();`;
 
 export default function IntroReservas() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(false);
   const audioRef = useRef(null);
   const startedAtRef = useRef(0);
@@ -24,15 +27,21 @@ export default function IntroReservas() {
     setVisible(false);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (
       !matchMedia("(min-width: 1024px)").matches ||
       matchMedia("(prefers-reduced-motion: reduce)").matches ||
       location.hash
-    ) return;
+    ) {
+      setVisible(false);
+      return;
+    }
 
     try {
-      if (sessionStorage.getItem(SESSION_KEY)) return;
+      if (sessionStorage.getItem(SESSION_KEY)) {
+        setVisible(false);
+        return;
+      }
     } catch {
       // No hacer depender el acceso a la landing de sessionStorage.
     }
@@ -51,7 +60,8 @@ export default function IntroReservas() {
         !cancelled &&
         matchMedia("(min-width: 1024px)").matches &&
         !matchMedia("(prefers-reduced-motion: reduce)").matches
-      ) setVisible(true);
+      ) setPlaying(true);
+      else if (!cancelled) setVisible(false);
     });
 
     return () => {
@@ -61,7 +71,7 @@ export default function IntroReservas() {
   }, []);
 
   useEffect(() => {
-    if (!visible) return;
+    if (!visible || !playing) return;
 
     const content = document.getElementById("reservas-contenido");
     const previousFocus = document.activeElement;
@@ -123,7 +133,7 @@ export default function IntroReservas() {
         content.focus({ preventScroll: true });
       }
     };
-  }, [visible, finish]);
+  }, [visible, playing, finish]);
 
   function toggleSound() {
     const audio = audioRef.current;
@@ -138,13 +148,16 @@ export default function IntroReservas() {
 
   if (!visible) return null;
 
-  return createPortal(
+  return (
+    <>
     <div
-      className={styles.intro}
+      className={`${styles.intro} ${playing ? "" : styles.waiting}`}
       role="dialog"
       aria-modal="true"
       aria-label="Bienvenido a Operon Reservas"
       data-reservas-intro
+      data-state={playing ? "playing" : "waiting"}
+      suppressHydrationWarning
       onAnimationEnd={(event) => {
         if (event.target === event.currentTarget) finish();
       }}
@@ -180,7 +193,9 @@ export default function IntroReservas() {
         </button>
         <button ref={skipRef} type="button" onClick={finish} className={styles.skip}>Omitir <span aria-hidden="true">→</span></button>
       </div>
-    </div>,
-    document.body
+    </div>
+    <script dangerouslySetInnerHTML={{ __html: BEFORE_PAINT_SCRIPT }} />
+    <noscript><style>{"[data-reservas-intro]{display:none!important}"}</style></noscript>
+    </>
   );
 }

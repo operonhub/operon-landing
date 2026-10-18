@@ -22,6 +22,13 @@
   animation: reveal-page .33s 2.67s cubic-bezier(.65, 0, .35, 1) both;
 }
 
+/* La cobertura ya está en el HTML: las fuentes y la hidratación nunca
+   descubren la landing antes de la intro. Si JS falla, se libera sola. */
+.waiting { animation: waiting-expire 6s step-end both; }
+.waiting .artwork, .waiting .controls { visibility: hidden; }
+.waiting .artwork, .waiting .artwork * { animation-play-state: paused !important; }
+.intro[hidden] { display: none; }
+
 /* Mismo lienzo y proporciones de la versión desktop aprobada. */
 .artwork {
   position: absolute;
@@ -130,6 +137,10 @@
   to { opacity: 1; transform: translateX(0); }
 }
 @keyframes reveal-page { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
+@keyframes waiting-expire {
+  from { visibility: visible; }
+  to { visibility: hidden; pointer-events: none; }
+}
 
 @media (max-width: 1023px), (prefers-reduced-motion: reduce) {
   .intro { display: none; animation: none; }

@@ -15,7 +15,7 @@ Se muestra en pantallas de al menos 1024 px, una vez por pestaña tras completar
 
 Durante la entrada, el contenido real permanece montado e inerte. Al terminar, se restituyen el scroll y el foco. Se puede omitir con el botón o Escape; los botones mantienen el foco dentro de la entrada. Un temporizador independiente cierra el overlay si la animación no emite su evento final.
 
-La página y sus metadatos se renderizan en el servidor. Sin JavaScript no aparece el overlay. La indisponibilidad de sessionStorage no impide ver ni cerrar la entrada.
+La página, sus metadatos y la cobertura azul se renderizan en el servidor. La cobertura permanece visible mientras se resuelven las fuentes; después empieza la animación, evitando que se vea la landing primero. Un script mínimo oculta la cobertura antes del primer paint si ya se vio en esa pestaña; en navegación interna, la decisión se resuelve con useLayoutEffect. Sin JavaScript, noscript oculta la cobertura. Si falla la hidratación, una salida CSS independiente libera la página tras 6 segundos. La indisponibilidad de sessionStorage no impide ver ni cerrar la entrada.
 
 El audio intenta comenzar con la animación; si el navegador lo bloquea, la entrada continúa sin sonido. El botón de sonido permite activarlo con un gesto y sincroniza la posición del audio con el tiempo transcurrido. No se garantiza audio automático en una visita directa.
 
